@@ -225,12 +225,23 @@ var AppComponent = (function () {
         //Dropbox.save('https://dl.dropboxusercontent.com/1/view/066vqli7gxhjl0s/Eon/Eon%20III%20Rollformul%C3%A4r/test%20%2817%29.json', 'test 18', options);
     };
     AppComponent.prototype.exportCharacter = function () {
+        console.log("export");
         var jsonData = this.character.serialize();
+        console.log(jsonData);
         var a = document.createElement("a");
+        console.log(a);
         var file = new Blob([jsonData], { type: 'text/json' });
-        a.href = URL.createObjectURL(file);
+        console.log(file);
+        var url = URL.createObjectURL(file);
+        a.href = url;
         a.download = this.filename + '.json';
+        console.log("click");
+        document.body.appendChild(a);
         a.click();
+        setTimeout(function () {
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }, 100);
     };
     AppComponent.prototype.importCharacter = function () {
         var input = document.createElement('input');
@@ -1858,7 +1869,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/form-input.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-input\">\r\n    <label [contentEditable]=\"labelEditable\">{{(label)}}</label>\r\n    <input #field [type]=\"type\" [(readonly)]=\"readonly\"\r\n        (change)=\"value = field.value\" [value]=\"value\" />\r\n</div>"
+module.exports = "<div class=\"form-input\">\r\n    <label [contentEditable]=\"labelEditable\">{{(label)}}</label>\r\n    <input #field [type]=\"type\" [(readonly)]=\"readonly\"\r\n        (change)=\"value = field.value\" [value]=\"value\" step=\"any\" />\r\n</div>"
 
 /***/ }),
 
@@ -2074,7 +2085,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/input-base.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<input #field [type]=\"type\" [(readonly)]=\"readonly\"\r\n        (change)=\"value = field.value\" [value]=\"value\" />"
+module.exports = "<input #field [type]=\"type\" [(readonly)]=\"readonly\"\r\n        (change)=\"value = field.value\" [value]=\"value\" step=\"any\"/>"
 
 /***/ }),
 
@@ -2302,7 +2313,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/input-computed.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div focus-inputs (focus)=\"showExpression()\" (focusout)=\"hideExpression()\" style=\"display:inline-block\">\r\n    <div [class.show]=\"expressionVisible\" class=\"form-input tooltip-box\" style=\"position:absolute;\">\r\n        <input type=\"checkbox\" [(ngModel)]=\"computationBase.ignoreExpression\">\r\n        <textarea [(ngModel)]=\"expression\" [class.strike]=\"computationBase.ignoreExpression\"></textarea>\r\n    </div>\r\n    <div class=\"form-input\">\r\n        <label *ngIf=\"!!label\">{{label}}</label>\r\n        <div class=\"input-group\" style=\"flex: 1 0 0px\">\r\n            <span *ngIf=\"!!prefix\" class=\"input-group-addon\">{{prefix}}</span>\r\n            <input class=\"form-control\" type=\"number\" [(ngModel)]=\"computationBase.value\" [readonly]=\"!computationBase.ignoreExpression\"/>\r\n            <span *ngIf=\"!!suffix\" class=\"input-group-addon\">{{suffix}}</span>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div focus-inputs (focus)=\"showExpression()\" (focusout)=\"hideExpression()\" style=\"display:inline-block\">\r\n    <div [class.show]=\"expressionVisible\" class=\"form-input tooltip-box\" style=\"position:absolute;\">\r\n        <input type=\"checkbox\" [(ngModel)]=\"computationBase.ignoreExpression\">\r\n        <textarea [(ngModel)]=\"expression\" [class.strike]=\"computationBase.ignoreExpression\"></textarea>\r\n    </div>\r\n    <div class=\"form-input\">\r\n        <label *ngIf=\"!!label\">{{label}}</label>\r\n        <div class=\"input-group\" style=\"flex: 1 0 0px\">\r\n            <span *ngIf=\"!!prefix\" class=\"input-group-addon\">{{prefix}}</span>\r\n            <input class=\"form-control\" type=\"number\" [(ngModel)]=\"computationBase.value\" [readonly]=\"!computationBase.ignoreExpression\" step=\"any\"/>\r\n            <span *ngIf=\"!!suffix\" class=\"input-group-addon\">{{suffix}}</span>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -2434,7 +2445,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/input-group.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-input\">\r\n    <label *ngIf=\"!!label\">{{label}}</label>\r\n    <div class=\"input-group flex-field\">\r\n        <span *ngIf=\"!!prefix\" class=\"input-group-addon\">{{prefix}}</span>\r\n        <input #field class=\"form-control\" [type]=\"type\" [(readonly)]=\"readonly\"\r\n                (change)=\"value = field.value\" [value]=\"value\"/>\r\n        <span *ngIf=\"!!suffix\" class=\"input-group-addon\">{{suffix}}</span>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"form-input\">\r\n    <label *ngIf=\"!!label\">{{label}}</label>\r\n    <div class=\"input-group flex-field\">\r\n        <span *ngIf=\"!!prefix\" class=\"input-group-addon\">{{prefix}}</span>\r\n        <input #field class=\"form-control\" [type]=\"type\" [(readonly)]=\"readonly\"\r\n                (change)=\"value = field.value\" [value]=\"value\"  step=\"any\"/>\r\n        <span *ngIf=\"!!suffix\" class=\"input-group-addon\">{{suffix}}</span>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -4581,7 +4592,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/page1/speed-index.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-input\">\r\n    <div class=\"input-group\">\r\n        <input class=\"form-control\" type=\"number\" [(ngModel)]=\"value1Sum\" style=\"border-right:1px solid black\"/>\r\n        <!--<span class=\"input-group-addon\">/</span>-->\r\n        <input class=\"form-control\" type=\"number\" [(ngModel)]=\"value2Sum\"/>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"form-input\">\r\n    <div class=\"input-group\">\r\n        <input class=\"form-control\" type=\"number\" [(ngModel)]=\"value1Sum\" style=\"border-right:1px solid black\" step=\"any\"/>\r\n        <!--<span class=\"input-group-addon\">/</span>-->\r\n        <input class=\"form-control\" type=\"number\" [(ngModel)]=\"value2Sum\" step=\"any\"/>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
