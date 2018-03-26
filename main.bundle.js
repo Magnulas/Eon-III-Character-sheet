@@ -121,7 +121,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <div class=\"file-menu\">\r\n        <div style=\"display:inline-block\">\r\n            <button (click)=\"exportCharacter()\">Export</button>\r\n            <input-base style=\"display:inline-block\" type=\"text\" [(value)]=\"filename\"></input-base>\r\n        </div>\r\n        <button (click)=\"importCharacter()\">Import</button>\r\n        <dropbox-button [(character)]=\"character\"></dropbox-button>\r\n        <!-- <button (click)=\"dropboxChooser()\">Dropbox</button>\r\n        <button (click)=\"dropboxSaver()\">Spara</button>-->\r\n    </div>\r\n    <character-sheet [character]=\"character\" [creator]=\"functionWrapper\"></character-sheet>\r\n</div>"
+module.exports = "<div>\r\n    <div class=\"file-menu\">\r\n        <div style=\"display:inline-block\">\r\n            <button (click)=\"exportCharacter()\">Export</button>\r\n            <input-base style=\"display:inline-block\" type=\"text\" [(value)]=\"filename\"></input-base>\r\n        </div>\r\n        <button (click)=\"importCharacter()\">Import</button>\r\n        <dropbox-button [(character)]=\"character\"></dropbox-button>\r\n        <button style=\"margin-left: 50px\" (click)=\"newCharacter()\">Ny karaktär</button>\r\n        <!-- <button (click)=\"dropboxChooser()\">Dropbox</button>\r\n        <button (click)=\"dropboxSaver()\">Spara</button>-->\r\n    </div>\r\n    <character-sheet [character]=\"character\" [creator]=\"functionWrapper\"></character-sheet>\r\n</div>"
 
 /***/ }),
 
@@ -145,7 +145,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AppComponent = (function () {
+var AppComponent = AppComponent_1 = (function () {
     //client;
     function AppComponent(_el, _re) {
         this._el = _el;
@@ -153,7 +153,12 @@ var AppComponent = (function () {
         this.character = null;
         this.functionWrapper = new __WEBPACK_IMPORTED_MODULE_2__util_character_creation_functions__["b" /* CharacterCreationFunctions */]();
         this.filename = "Karaktär";
-        this.character = this.functionWrapper.newCharacter();
+        this.newCharacter();
+        var self = this;
+        self.importCharacterFromLocalStorage();
+        window.addEventListener("beforeunload", function (e) {
+            self.exportCharacterToLocalStorage();
+        }, false);
     }
     AppComponent.prototype.dropboxChooser = function () {
         var self = this;
@@ -225,17 +230,12 @@ var AppComponent = (function () {
         //Dropbox.save('https://dl.dropboxusercontent.com/1/view/066vqli7gxhjl0s/Eon/Eon%20III%20Rollformul%C3%A4r/test%20%2817%29.json', 'test 18', options);
     };
     AppComponent.prototype.exportCharacter = function () {
-        console.log("export");
         var jsonData = this.character.serialize();
-        console.log(jsonData);
         var a = document.createElement("a");
-        console.log(a);
         var file = new Blob([jsonData], { type: 'text/json' });
-        console.log(file);
         var url = URL.createObjectURL(file);
         a.href = url;
         a.download = this.filename + '.json';
-        console.log("click");
         document.body.appendChild(a);
         a.click();
         setTimeout(function () {
@@ -263,9 +263,23 @@ var AppComponent = (function () {
         }, false);
         input.click();
     };
+    AppComponent.prototype.importCharacterFromLocalStorage = function () {
+        var jsonData = window.localStorage.getItem(AppComponent_1.LOCAL_STORAGE_PATH);
+        if (jsonData) {
+            this.character = __WEBPACK_IMPORTED_MODULE_1__models_character__["a" /* CharacterObject */].deserialize(jsonData);
+        }
+    };
+    AppComponent.prototype.exportCharacterToLocalStorage = function () {
+        var jsonData = this.character.serialize();
+        window.localStorage.setItem(AppComponent_1.LOCAL_STORAGE_PATH, jsonData);
+    };
+    AppComponent.prototype.newCharacter = function () {
+        this.character = this.functionWrapper.newCharacter();
+    };
     return AppComponent;
 }());
-AppComponent = __decorate([
+AppComponent.LOCAL_STORAGE_PATH = "Character";
+AppComponent = AppComponent_1 = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
@@ -276,7 +290,7 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]) === "function" && _b || Object])
 ], AppComponent);
 
-var _a, _b;
+var AppComponent_1, _a, _b;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
