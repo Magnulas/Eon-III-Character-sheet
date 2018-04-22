@@ -16,13 +16,13 @@ label {
 input{
     height: 32px;
 }
-input, textarea, .form-control, .input-group-addon{
+input, textarea, .form-control, .input-group-text{
 	font-size: 20px;
 }
 span, span.formula{
     font-size: 16px;
 }
-.input-group-addon{
+.input-group-append{
     font-size: 16px; 
 }
 /*
@@ -55,13 +55,13 @@ span, span.formula{
     input{
         height: 0.5cm;
     }
-    input, textarea, .form-control, .input-group-addon{
+    input, textarea, .form-control, .input-group-text{
         font-size: 0.35cm;
     }
     span, span.formula{
         font-size: 0.3cm;
     }
-    .input-group-addon{
+    .input-group-text{
         font-size: 0.35cm;
     }
     /*
