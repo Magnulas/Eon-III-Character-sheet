@@ -259,7 +259,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.importCharacterFromLocalStorage = function () {
         var jsonData = window.localStorage.getItem(AppComponent_1.LOCAL_STORAGE_PATH);
         if (jsonData) {
-            this.character = __WEBPACK_IMPORTED_MODULE_1__models_character__["a" /* CharacterObject */].deserialize(jsonData);
+            //this.character = CharacterObject.deserialize(jsonData);
         }
     };
     AppComponent.prototype.exportCharacterToLocalStorage = function () {
@@ -461,7 +461,7 @@ module.exports = "h1 { \r\n\ttext-align: center; \r\n\tcolor: #FFFFFF; \r\n\ttex
 /***/ "./src/app/character-sheet.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<localization [object]=\"this\" i18n-strength=\"@@strength\" strength=\"STY\" i18n-eon4will=\"@@eon4will\" eon4will=\"Eon IV Vilja\" i18n-constitution=\"@@constitution\" constitution=\"TÅL\"\r\n  i18n-dexterity=\"@@dexterity\" dexterity=\"RÖR\" i18n-charisma=\"@@charisma\" charisma=\"PER\" i18n-intelligence=\"@@intelligence\"\r\n  intelligence=\"PSY\" i18n-will=\"@@will\" will=\"VIL\" i18n-education=\"@@education\" education=\"BIL\" i18n-sight=\"@@sight\" sight=\"SYN\"\r\n  i18n-hearing=\"@@hearing\" hearing=\"HÖR\" i18n-combatExperience=\"@@combatExperience\" combatExperience=\"Stridsvana\" i18n-charismaIntelligenceSkill=\"@@charismaIntelligenceSkill\"\r\n  charismaIntelligenceSkill=\"[PP]\" i18n-dexterityIntelligenceSkill=\"@@dexterityIntelligenceSkill\" dexterityIntelligenceSkill=\"[RP]\"\r\n  i18n-sightIntelligenceSkill=\"@@sightIntelligenceSkill\" sightIntelligenceSkill=\"[PS]\" i18n-nativeLanguageSkill=\"@@nativeLanguageSkill\"\r\n  nativeLanguageSkill=\"Modersmål\" i18n-dexteritySkill=\"@@dexteritySkill\" dexteritySkill=\"[R]\" i18n-intelligenceSkill=\"@@intelligenceSkill\"\r\n  intelligenceSkill=\"[P]\" i18n-constitutionSkill=\"@@constitutionSkill\" constitutionSkill=\"[T]\" i18n-educationSkill=\"@@educationSkill\"\r\n  educationSkill=\"[B]\" i18n-storyTellingSkill=\"@@storyTellingSkill\" storyTellingSkill=\"Berättarkonst\" i18n-danceSkill=\"@@danceSkill\"\r\n  danceSkill=\"Dansa\" i18n-sleightOfHandSkill=\"@@sleightOfHandSkill\" sleightOfHandSkill=\"Fingerfärdighet\" i18n-fishingSkill=\"@@fishingSkill\"\r\n  fishingSkill=\"Fiske\" i18n-seductionSkill=\"@@seductionSkill\" seductionSkill=\"Förföra\" i18n-interogateSkill=\"@@interogateSkill\"\r\n  interogateSkill=\"Förhöra\" i18n-jestSkill=\"@@jestSkill\" jestSkill=\"Gyckla\" i18n-hideSkill=\"@@hideSkill\" hideSkill=\"Gömma\"\r\n  i18n-tradeSkill=\"@@tradeSkill\" tradeSkill=\"Handel\" i18n-jumpSkill=\"@@jumpSkill\" jumpSkill=\"Hoppa\" i18n-throwSkill=\"@@throwSkill\"\r\n  throwSkill=\"Kasta\" i18n-climbSkill=\"@@climbSkill\" climbSkill=\"Klättra\" i18n-driveWagonSkill=\"@@driveWagonSkill\" driveWagonSkill=\"Köra vagn\"\r\n  i18n-leadershipSkill=\"@@leadershipSkill\" leadershipSkill=\"Ledarskap\" i18n-marschSkill=\"@@marschSkill\" marschSkill=\"Marsch\"\r\n  i18n-cookingSkill=\"@@cookingSkill\" cookingSkill=\"Matlagning\" i18n-occultismSkill=\"@@occultismSkill\" occultismSkill=\"Ockultism\"\r\n  i18n-rideSkill=\"@@rideSkill\" rideSkill=\"Rida\" i18n-singSkill=\"@@singSkill\" singSkill=\"Sjunga\" i18n-skiSkill=\"@@skiSkill\"\r\n  skiSkill=\"Skidor\" i18n-actingSkill=\"@@actingSkill\" actingSkill=\"Skådespel\" i18n-brawlSkill=\"@@brawlSkill\" brawlSkill=\"Slagsmål\"\r\n  i18n-sneakSkill=\"@@sneakSkill\" sneakSkill=\"Smyga\" i18n-scoutSkill=\"@@scoutSkill\" scoutSkill=\"Speja\" i18n-gamblingSkill=\"@@gamblingSkill\"\r\n  gamblingSkill=\"Spel & dobbel\" i18n-trackingSkill=\"@@trackingSkill\" trackingSkill=\"Spåra\" i18n-drinkingSkill=\"@@drinkingSkill\"\r\n  drinkingSkill=\"Supa\" i18n-searchSkill=\"@@searchSkill\" searchSkill=\"Söka\" i18n-educateSkill=\"@@educateSkill\" educateSkill=\"Undervisning\"\r\n  i18n-avoidSkill=\"@@avoidSkill\" avoidSkill=\"Undvika\" i18n-appraiseSkill=\"@@appraiseSkill\" appraiseSkill=\"Värdera\" i18n-survivalSkill=\"@@survivalSkill\"\r\n  survivalSkill=\"Överlevnad\" i18n-persuadeSkill=\"@@persuadeSkill\" persuadeSkill=\"Övertala\">\r\n</localization>\r\n<!--Character export/import, online/cloud storage, localization switching(?)-->\r\n<!--TODO vapen färdigheter\r\n    Gör så att färdighets fönstret öppnar en skill selection från misc skills + stridskonster\r\n    Gör om så att misc skills och combat arts är samma bas objekt? Nej, gör så att de båda har ett interface som heter Value el liknande.\r\n    Gör misc skills skillt från character skills? Nej, gör så att man kan välja bas skill för en misc skill, t.ex. svärd.\r\n    Meyn för bas skill selection kan komma upp när man väljer värde/markerar värde\r\n-->\r\n<div class=\"pages\">\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"flex-row\" style=\"flex-direction:row-reverse\">\r\n          <div style=\"flex: 1 0 350px\" class=\"flex-column\">\r\n            <div class=\"sub-form\">\r\n              <h1>EON III</h1>\r\n            </div>\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <div class=\"flex-form-input\" style=\"height:100%\" aligned selector=\"form-input label, input-group label\">\r\n                  <div>\r\n                    <form-input i18n-label=\"@@name\" label=\"Namn\" [(value)]=\"character.name\"></form-input>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@Profession\" label=\"Yrke\" [(value)]=\"character.profession\"></form-input>\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    <div class=\"col col-md-6 col-12\">\r\n                      <form-input i18n-label=\"@@race\" label=\"Ras\" [(value)]=\"character.race\"></form-input>\r\n                      <form-input i18n-label=\"@@gender\" label=\"Kön\" [(value)]=\"character.gender\"></form-input>\r\n                      <form-input i18n-label=\"@@body\" label=\"Kropp\" [(value)]=\"character.body\"></form-input>\r\n                    </div>\r\n                    <div class=\"col col-md-6 col-12\">\r\n                      <input-group i18n-label=\"@@height\" label=\"Längd\" [(value)]=\"character.height\" i18n-suffix=\"@@heightUnit\" suffix=\"cm\" type=\"text\"></input-group>\r\n                      <input-group i18n-label=\"@@weight\" label=\"Vikt\" [(value)]=\"character.weight\" i18n-suffix=\"@@weightUnit\" suffix=\"kg\" type=\"text\"></input-group>\r\n                      <input-group i18n-label=\"@@age\" label=\"Ålder\" [(value)]=\"character.age\" i18n-suffix=\"@@ageUnit\" suffix=\"år\" type=\"text\"></input-group>\r\n                    </div>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@homestead\" label=\"Hemort\" [(value)]=\"character.homestead\"></form-input>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@religion\" label=\"Religion\" [(value)]=\"character.religion\"></form-input>\r\n                  </div>\r\n                  <div style=\"display:flex\">\r\n                    <label i18n=\"@@weaponarm\">Vapenarm</label>\r\n                    <div style=\"flex: 1 0 auto;display:flex;justify-content:space-around\">\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-right' class='pseudo-checkbox sr-only' value=\"right\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@right\" for='weapon-arm-right' class='fancy-checkbox-label'>\r\n                          Höger\r\n                        </label>\r\n                      </div>\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-left' class='pseudo-checkbox sr-only' value=\"left\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@left\" for='weapon-arm-left' class='fancy-checkbox-label'>\r\n                          Vänster\r\n                        </label>\r\n                      </div>\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-ambidextrous' class='pseudo-checkbox sr-only' value=\"ambidextrous\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@ambidextrous\" for='weapon-arm-ambidextrous' class='fancy-checkbox-label'>\r\n                          Tvehänt\r\n                        </label>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div aligned style=\"flex: 0 0 auto\" class=\"flex-column\">\r\n            <div class=\"sub-form flex-column\">\r\n              <form-input [label]=\"character.attributes.strength.name\" [(value)]=\"character.attributes.strength.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.constitution.name\" [(value)]=\"character.attributes.constitution.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.dexterity.name\" [(value)]=\"character.attributes.dexterity.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.charisma.name\" [(value)]=\"character.attributes.charisma.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.intelligence.name\" [(value)]=\"character.attributes.intelligence.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.will.name\" [(value)]=\"character.attributes.will.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.education.name\" [(value)]=\"character.attributes.education.value\" type=\"number\"></form-input>\r\n            </div>\r\n            <div class=\"sub-form flex-column\">\r\n              <add-remove-menu class=\"hover-menu\" [(array)]=\"character.attributes.extraAttributes\" min=\"0\" [default]=\"creator.newAttribute.bind(creator)\"></add-remove-menu>\r\n              <form-input [label]=\"character.attributes.sight.name\" [(value)]=\"character.attributes.sight.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.hearing.name\" [(value)]=\"character.attributes.hearing.value\" type=\"number\"></form-input>\r\n              <form-input *ngFor=\"let a of character.attributes.extraAttributes\" labelEditable=\"true\" [(label)]=\"a.name\" [(value)]=\"a.value\"\r\n                type=\"number\"></form-input>\r\n            </div>\r\n          </div>\r\n          <div style=\"flex: 1 0 300px\" class=\"flex-column\" aligned>\r\n            <div class=\"sub-form\" style=\"flex-grow:0\">\r\n              <div class=\"flex-form-input\">\r\n                <form-input i18n-label=\"@@player\" label=\"Spelare\" [(value)]=\"character.player\"></form-input>\r\n                <form-input i18n-label=\"@@gamemaster\" label=\"Spelledare\" [(value)]=\"character.gameMaster\"></form-input>\r\n              </div>\r\n            </div>\r\n            <div class=\"flex-form-input sub-form\">\r\n              <character-stat-input i18n-label=\"@@loyalty\" label=\"Lojalitet\" [stat]=\"character.characteristics.loyalty\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@honor\" label=\"Heder\" [stat]=\"character.characteristics.honor\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@lust\" label=\"Amor\" [stat]=\"character.characteristics.lust\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@aggression\" label=\"Aggression\" [stat]=\"character.characteristics.aggression\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@faith\" label=\"Tro\" [stat]=\"character.characteristics.faith\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@generosity\" label=\"Generositet\" [stat]=\"character.characteristics.generosity\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@reputation\" label=\"Rykte {{formatDefaultValue(DefaultValues.reputation)}}\" [stat]=\"character.characteristics.reputation\"></character-stat-input>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col col-lg-8 col-md-12 col-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row\">\r\n              <div class=\"col col-md-7 col-12 flex-column\">\r\n\r\n                <div class=\"sub-form\">\r\n                  <div>\r\n                    <add-remove-menu class=\"hover-menu\" [(array)]=\"character.specialAbilities\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                    <div class=\"flex-form-input flex-column-flex table-responsive\">\r\n                      <table class=\"table\">\r\n                        <thead>\r\n                          <th i18n=\"@@specialAbilities\">Speciella fördelar & nackdelar</th>\r\n                        </thead>\r\n                        <tbody [sortablejs]=\"character.specialAbilities\">\r\n                          <tr *ngFor='let a of character.specialAbilities'>\r\n                            <td>\r\n                              <input-base type=\"text\" [(value)]=\"a.value\"></input-base>\r\n                            </td>\r\n                          </tr>\r\n                        </tbody>\r\n                      </table>\r\n                      <!--TODO have another field with EON 4 mental problems?-->\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col col-md-5 col-12 flex-column\">\r\n                <div class=\"row\" style=\"flex-grow:0\">\r\n                  <div class=\"col col-6 sub-form form-input\">\r\n                    <form-input i18n-label=\"@@luck\" label=\"Tur {{formatDefaultValue(DefaultValues.luck)}}\" [(value)]=\"character.attributes.luck.value\"\r\n                      type=\"number\"></form-input>\r\n                  </div>\r\n                  <div class=\"col col-6 sub-form form-input\">\r\n                    <form-input label=\"Qadosh\" [(value)]=\"character.attributes.qadosh.value\" type=\"number\"></form-input>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row sub-form\" aligned>\r\n                  <div class=\"col col-12\">\r\n                    <input-computed style=\"display: inline-block\" i18n-label=\"@@movement\" label=\"FÖR\" [computationBase]=\"character.inferedAttributes.speed\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.speed.expression\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-12\">\r\n                    <form-input style=\"display: inline-block\" i18n-label=\"@@running\" label=\"Språng\" [value]=\"character.inferedAttributes.speed.value * 2\"\r\n                      type=\"number\" [readonly]=\"true\"></form-input>\r\n                    <computed-expression expression=\"dexterity * 2\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-12\">\r\n                    <form-input style=\"display: inline-block\" i18n-label=\"@@sprinting\" label=\"Spurt\" [value]=\"character.inferedAttributes.speed.value * 3\"\r\n                      type=\"number\" [readonly]=\"true\"></form-input>\r\n                    <computed-expression expression=\"dexterity * 3\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row sub-form\">\r\n                  <ng-template #insentivityRow let-insentivity=\"insentivity\" let-label=\"label\" let-maxLevel=\"maxLevel\" let-thresholds=\"thresholds\">\r\n                    <td>\r\n                      <div>\r\n                        <increment-decrement-menu class=\"hover-menu\" [(value)]=\"insentivity.value\" min=\"0\" [max]=\"maxLevel\"></increment-decrement-menu>\r\n                        <label>{{label}}</label>\r\n                      </div>\r\n                    </td>\r\n                    <td *ngFor=\"let r of thresholds; let i = index\">\r\n                      <input-box [checked]=\"i < insentivity.value\" type=\"square\" fill=\"solid\"></input-box>\r\n                    </td>\r\n                  </ng-template>\r\n\r\n                  <!--\r\n                    <h3 i18n=\"@@insensitivity\">Avtrubbning</h3>-->\r\n                  <table class=\"table\" style=\"margin:0px\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.exposure, label: 'Utsatthet', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.violence, label: 'Våld', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.supernatural, label: 'Övernaturligt', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <td></td>\r\n                        <td *ngFor=\"let insensitivityThreshold of character.insensitivityThresholds; let i = index\">\r\n                          {{insensitivityThreshold}}\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                  <form-input i18n-label=\"@@will\" [label]=\"character.attributes.eon4will.name\" [(value)]=\"character.attributes.eon4will.value\" type=\"text\"></form-input>\r\n                </div>\r\n                <div class=\"row sub-form\">\r\n                  <table class=\"table\">\r\n                    <tbody>\r\n                      <tr style=\"margin-bottom: 2px\">\r\n                        <td i18n=\"@@focus\">\r\n                          <increment-decrement-menu class=\"hover-menu\" [(value)]=\"character.focus\" min=\"0\" [max]=\"character.maxWellBeing\"></increment-decrement-menu>\r\n                          <label>Fokus</label>\r\n                        </td>\r\n                        <td *ngFor=\"let r of character.maxWellBeing/2 | arrayConstructor; let i = index\" style=\"line-height:16px\">\r\n                          <input-box [checked]=\"i < character.focus\" type=\"circle\" fill=\"solid\" style=\"line-height:1px\"></input-box>\r\n                          <input-box [checked]=\"(i + character.maxWellBeing/2 ) < character.focus\" type=\"circle\" fill=\"solid\"></input-box>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td i18n=\"@@wellBeing\">\r\n                          <div>\r\n                            <increment-decrement-menu class=\"hover-menu\" [(value)]=\"character.wellBeing\" min=\"0\" [max]=\"character.maxWellBeing\"></increment-decrement-menu>\r\n                            <label>Välmående</label>\r\n                          </div>\r\n                        </td>\r\n                        <td *ngFor=\"let r of character.maxWellBeing/2 | arrayConstructor; let i = index\" style=\"line-height:16px\">\r\n                          <input-box [checked]=\"i < character.wellBeing\" type=\"circle\" fill=\"solid\"></input-box>\r\n                          <input-box [checked]=\"(i + character.maxWellBeing/2 ) < character.wellBeing\" type=\"circle\" fill=\"solid\"></input-box>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row sub-form\" aligned>\r\n              <h3 class=\"col col-3\" i18n=\"@@baseDamage\">Grundskada</h3>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@slash\" label=\"Hugg\" prefix=\"Ob\" [(value)]=\"character.baseDamage.slash\" type=\"text\"></input-group>\r\n              </div>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@crush\" label=\"Kross\" prefix=\"Ob\" [(value)]=\"character.baseDamage.crush\" type=\"text\"></input-group>\r\n              </div>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@pierce\" label=\"Stick\" prefix=\"Ob\" [(value)]=\"character.baseDamage.pierce\" type=\"text\"></input-group>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-4 col-md-12 col-12 flex-column\">\r\n        <div class=\"row sub-form\">\r\n          <character-characteristic i18n-label=\"@@primaryCharacteristic\" label=\"Primärt karaktärsdrag\" [characteristic]=\"character.characteristics.primary\"\r\n            style=\"margin-bottom: 2px\"></character-characteristic>\r\n          <character-characteristic i18n-label=\"@@secondaryCharacteristic\" label=\"Sekundärt karaktärsdrag\" [characteristic]=\"character.characteristics.secondary\"></character-characteristic>\r\n        </div>\r\n        <div class=\"row sub-form\">\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@clothesAndArmor\">Kläder & rustning</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">&#215;0.5 =</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightBodyArmor())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@weaponsAndShields\">Vapen & sköldar</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightWeaponsShields())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@carriedItemsAndCoins\">Burna föremål, mynt etc. </label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightCarriedItems())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@luggage\">Utrustning & proviant</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightLuggage())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@totalLoad\">Total belastning</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">=</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightTotal(),3)\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12\">\r\n            <hr />\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"justify-content:space-between\">\r\n            <div>\r\n              <label class=\"flex-field\" i18n=\"@@carryingCapacity\">Bärförmåga</label>\r\n            </div>\r\n            <div>\r\n              <computed-expression right=\"true\" [expression]=\"character.inferedAttributes.carryingCapacity.expression\" [expressionLookupTable]=\"character.inferedAttributes.carryingCapacity.baseValues\"></computed-expression>\r\n              <input-computed [computationBase]=\"character.inferedAttributes.carryingCapacity\" i18n-suffix=\"@@weightUnit\" suffix=\"kg\"></input-computed>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\" aligned selector=\"th:first-child\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.meleeWeapons\" min=\"1\" [default]=\"creator.newMeleeWeapon.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@meleeWeapons\">Närstridsvapen</th>\r\n                    <th i18n=\"@@skill\">Färdighet</th>\r\n                    <th i18n=\"@@grip\">Fattning</th>\r\n                    <th i18n=\"@@slash\">Hugg</th>\r\n                    <th i18n=\"@@crush\">Kross</th>\r\n                    <th i18n=\"@@pierce\">Stick</th>\r\n                    <th i18n=\"@@durability\">BRYT</th>\r\n                    <th i18n=\"@@speed\">SI</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody [sortablejs]=\"character.equipment.meleeWeapons\">\r\n                  <tr melee-weapon *ngFor='let weapon of character.equipment.meleeWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.rangedWeapons\" min=\"1\" [default]=\"creator.newRangedWeapon.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@rangedWeapons\">Avståndsvapen</th>\r\n                    <th i18n=\"@@skill\">Färdighet</th>\r\n                    <th i18n=\"@@range\">Avstånd</th>\r\n                    <th i18n=\"@@short\">Kort</th>\r\n                    <th i18n=\"@@normak\">Normal</th>\r\n                    <th i18n=\"@@far\">Långt</th>\r\n                    <th i18n=\"@@veryFar\">Mycket långt</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody [sortablejs]=\"character.equipment.rangedWeapons\">\r\n                  <tr ranged-weapon *ngFor='let weapon of character.equipment.rangedWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-lg-8 col-12 flex-column\">\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <div>\r\n                  <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.shields\" min=\"1\" [default]=\"creator.newShield.bind(creator)\"></add-remove-menu>\r\n                  <div class=\"table-responsive\">\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                        <tr>\r\n                          <th i18n=\"@@shields\">Sköldar</th>\r\n                          <th i18n=\"@@skill\">Färdighet</th>\r\n                          <th i18n=\"@@passiveProtection\">Passivt s.</th>\r\n                          <th i18n=\"@@damage\">Skada</th>\r\n                          <th i18n=\"@@durability\">BRYT</th>\r\n                          <th i18n=\"@@speed\">SI</th>\r\n                          <th i18n=\"@@weight\">Vikt</th>\r\n                        </tr>\r\n                      </thead>\r\n                      <tbody [sortablejs]=\"character.equipment.shields\">\r\n                        <tr shield *ngFor='let shield of character.equipment.shields' [item]=\"shield.item\" [character]=\"character\" [(skill)]=\"shield.skill\">\r\n                        </tr>\r\n                      </tbody>\r\n                    </table>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <div>\r\n                  <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.armor\" min=\"1\" [default]=\"creator.newArmor.bind(creator)\"></add-remove-menu>\r\n                  <div class=\"table-responsive\">\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                        <tr>\r\n                          <th i18n=\"@@armor\">Kroppsskydd</th>\r\n                          <th i18n=\"@@protects\">Ger skydd åt</th>\r\n                          <th i18n=\"@@slash\">Hugg</th>\r\n                          <th i18n=\"@@crush\">Kross</th>\r\n                          <th i18n=\"@@pierce\">Stick</th>\r\n                          <th i18n=\"@@durability\">BRYT</th>\r\n                          <th i18n=\"@@weight\">Vikt</th>\r\n                        </tr>\r\n                      </thead>\r\n                      <tbody [sortablejs]=\"character.equipment.armor\">\r\n                        <tr armor *ngFor='let armor of character.equipment.armor' [item]=\"armor\">\r\n                        </tr>\r\n                      </tbody>\r\n                    </table>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-4 col-12 flex-column\">\r\n            <div class=\"row\">\r\n              <div class=\"col col-lg-12 col-md-6 col-sm-6 col-12 flex-column\">\r\n                <div class=\"row sub-form\" aligned>\r\n                  <div class=\"col col-sm-12 col-12\">\r\n                    <input-computed i18n=\"@@winInitiative\" label=\"VINIT\" [computationBase]=\"character.inferedAttributes.initiative\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.initiative.expression\" [expressionLookupTable]=\"character.inferedAttributes.initiative.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-sm-12 col-12\">\r\n                    <input-computed i18n=\"@@insight\" label=\"Insikt\" [computationBase]=\"character.inferedAttributes.insight\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.insight.expression\" [expressionLookupTable]=\"character.inferedAttributes.insight.baseValues\"></computed-expression>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"col col-12 flex-column\">\r\n                    <div class=\"sub-form\">\r\n                      <input-computed i18n-label=\"@@blackOutCheck\" label=\"Chockslag\" [computationBase]=\"character.inferedAttributes.chockValue\"></input-computed>\r\n                      <computed-expression [expression]=\"character.inferedAttributes.chockValue.expression\" [expressionLookupTable]=\"character.inferedAttributes.chockValue.baseValues\"></computed-expression>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col col-lg-12 col-md-6 col-sm-6 col-12 flex-column\">\r\n                <div class=\"sub-form flex-form-input\">\r\n                  <damage-grid rows=\"11\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.exhaustion\" i18n-header=\"@@exhaustion\" header=\"Utmattning\"\r\n                    i18n-severDamageName=\"@@exhaustionLongterm\" severDamageName=\"Långtidsutmattning\">\r\n                    <ng-template #labelHeader>\r\n                      <div>\r\n                        <div style=\"width: 75%; display:inline-block;\">\r\n                          <span i18n=\"@@difficulty\" style=\"display:block;\">Svårighet</span>\r\n                        </div>\r\n                        <div style=\"width: 25%; display:inline-block;\">\r\n                          <span i18n=\"@@movement\" style=\"display:block;\">FÖR</span>\r\n                        </div>\r\n                      </div>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <div *ngIf=\"row % 2 === 0 && row > 1\">\r\n                        <label style=\"text-align: center;width:75%;display:inline-block\">+Ob{{row/2}}T6</label>\r\n                        <label style=\"text-align: center;width:25%;display:inline-block\">-{{row/2}}</label>\r\n                      </div>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-sm-12\">\r\n            <div class=\"flex-row\">\r\n              <div class=\"sub-form flex-form-input\">\r\n                <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.trauma\" i18n-header=\"@@trauma\" header=\"Trauma\">\r\n                  <ng-template #labelHeader>\r\n                    <span i18n=\"@@deathcheck\" style=\"display:block\">Dödslag</span>\r\n                    <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                  </ng-template>\r\n                  <ng-template #label let-row=\"row\">\r\n                    <label *ngIf=\"row > 0\" style=\"text-align: right;width:100%\">+Ob{{row}}T6</label>\r\n                  </ng-template>\r\n                </damage-grid>\r\n              </div>\r\n              <div class=\"sub-form flex-form-input\">\r\n                <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.pain\" i18n-header=\"@@pain\" header=\"Smärta\">\r\n                  <ng-template #labelHeader>\r\n                    <div style=\"width: 75%; display:inline-block;\">\r\n                      <div>\r\n                        <span i18n=\"@@difficulty\" style=\"display:block\">Svårighet</span>\r\n                        <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                      </div>\r\n                    </div>\r\n                    <div style=\"width: 25%; display:inline-block;\">\r\n                      <span i18n=\"@@movement\" style=\"display:block;\">FÖR</span>\r\n                    </div>\r\n                  </ng-template>\r\n                  <ng-template #label let-row=\"row\">\r\n                    <div *ngIf=\"row > 0\">\r\n                      <label style=\"text-align: center;width:75%;display:inline-block\">+Ob{{row}}T6</label>\r\n                      <label style=\"text-align: center;width:25%;display:inline-block\">-{{row}}</label>\r\n                    </div>\r\n                  </ng-template>\r\n                </damage-grid>\r\n              </div>\r\n              <div class=\"sub-form flex-row\">\r\n                <div class=\"flex-form-input\" style=\"flex: 1 0 auto\">\r\n                  <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" labelsRight=\"true\" type=\"square\" [damageColumns]=\"character.bleeding\"\r\n                    i18n-header=\"@@bloodloss\" header=\"Blödningstakt\">\r\n                    <ng-template #labelHeader>\r\n                      <span class=\"fa fa-long-arrow-right\" style=\"font-size:0.8cm;float:right\"></span>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <div>\r\n                        <label *ngIf=\"row === 0\" i18n=\"@@minute\" style=\"text-align: center;display:inline-block\">{{'+1/'}}min</label>\r\n                        <label *ngIf=\"row > 0\" i18n=\"@@round\" style=\"text-align: center;display:inline-block\">{{'+' + row + '/'}}runda</label>\r\n                      </div>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n                <div class=\"flex-form-input\" style=\"flex: 1 0 auto\">\r\n                  <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.bloodLoss\" i18n-header=\"@@bloodloss\" header=\"Blodförlust\">\r\n                    <ng-template #labelHeader>\r\n                      <span i18n=\"@@deathcheck\" style=\"display:block\">Dödslag</span>\r\n                      <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <label *ngIf=\"row > 1\" style=\"text-align: right;width:100%\">+Ob{{row - 1}}T6</label>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <ng-template #skillBodyRow let-skill=\"skill\">\r\n    <td style=\"display:flex;justify-content:space-between\">\r\n      <label>{{skill.name}}</label>\r\n      <span>{{skill.baseValue.name}}</span>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.specialization\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n  <ng-template #miscellaneousSkillBodyRow let-skill=\"skill\">\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.name\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.specialization\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n  <ng-template #simpleSkillBodyRow let-skill=\"skill\">\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.name\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n\r\n  <!--TODO cast coin type on drag drop?-->\r\n\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-lg-6 col-md-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div class=\"table-responsive\">\r\n                <table class=\"table\">\r\n                  <thead>\r\n                    <tr>\r\n                      <th></th>\r\n                      <th i18n=\"@@value\">Värde</th>\r\n                      <th i18n=\"@@specialization\">Specialicering</th>\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr *ngFor=\"let skill of characterSkills\">\r\n                      <ng-template *ngTemplateOutlet=\"skillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <h3 i18n=\"@@baseSkillChanses\">Grundchanser för färdigheter</h3>\r\n              </div>\r\n              <div class=\"col col-12\">\r\n                <ng-template #baseSkill let-skill=\"skill\">\r\n                  <div>\r\n                    <input-computed [label]=\"skill.name\" [computationBase]=\"skill\" min=\"5\"></input-computed>\r\n                    <computed-expression [expression]=\"skill.expression\" [expressionLookupTable]=\"skill.baseValues\"></computed-expression>\r\n                  </div>\r\n                </ng-template>\r\n              </div>\r\n              <div class=\"col col-12\">\r\n                <div class=\"row\" aligned>\r\n                  <div class=\"col col-sm-6 col-12\">\r\n                    <div style=\"margin:auto\">\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.charismaIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.dexterityIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.sightIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.nativeLanguage}\"></ng-template>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"col col-sm-6 col-12\">\r\n                    <div style=\"margin:auto\">\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.dexterity}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.intelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.constitution}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.education}\"></ng-template>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.languageSkills\" min=\"1\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@language\">Språk</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.languageSkills\">\r\n                      <tr *ngFor=\"let skill of character.languageSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"simpleSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.scriptSkills\" min=\"1\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@script\">Skrift</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.scriptSkills\">\r\n                      <tr *ngFor=\"let skill of character.scriptSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"simpleSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-md-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <form-input [label]=\"character.attributes.combatExperience.name\" [(value)]=\"character.attributes.combatExperience.value\"\r\n                  type=\"number\"></form-input>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.miscellaneousSkills\" min=\"5\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@skills\">Färdigheter</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                        <th i18n=\"@@specialization\">Specialicering</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.miscellaneousSkills\">\r\n                      <tr *ngFor=\"let skill of character.miscellaneousSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"miscellaneousSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <add-remove-menu class=\"hover-menu\" [(array)]=\"character.combatArts\" min=\"1\" [default]=\"creator.newCombatArtSkill.bind(creator)\"></add-remove-menu>\r\n              <h3 i18n=\"@@combatArts\">Stridskonster</h3>\r\n              <combat-art *ngFor=\"let combatArt of character.combatArts\" [combatArt]=\"combatArt\"></combat-art>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.miscellaneous\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@miscellaneous\">Övrigt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.miscellaneous\">\r\n                      <tr *ngFor=\"let misc of character.miscellaneous\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"misc.value\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.coins\" min=\"1\" [default]=\"creator.newCoin.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@valuables\">Värdeföremål</th>\r\n                        <th i18n=\"@@count\">Antal</th>\r\n                        <th i18n=\"@@worthEach\">Värde/st</th>\r\n                        <th i18n=\"@@weightEach\">Vikt/st</th>\r\n                        <th i18n=\"@@totalWeight\">Total vikt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"valuables-zone\" [dragulaModel]=\"character.equipment.coins\">\r\n                      <tr *ngFor=\"let coin of character.equipment.coins; let i = index\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"coin.count\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.worth\" i18n-suffix=\"@@coinUnit\" suffix=\"d\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.weight\" i18n-suffix=\"@@smallWeightUnit\" suffix=\"g\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [value]=\"coin.count && coin.weight ? coin.count * coin.weight : null\" i18n-suffix=\"@@smallWeightUnit\" suffix=\"g\"\r\n                            type=\"number\" readonly=\"true\"></input-group>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.coinsStorage\" min=\"1\" [default]=\"creator.newCoinStorage.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@valuables\">Värdeföremål (förvaring)</th>\r\n                        <th i18n=\"@@count\">Antal</th>\r\n                        <th i18n=\"@@worthEach\">Värde/st</th>\r\n                        <th i18n=\"@@location\">Förvaring</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"valuables-zone\" [dragulaModel]=\"character.equipment.coinsStorage\">\r\n                      <tr *ngFor=\"let coin of character.equipment.coinsStorage\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"coin.count\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.worth\" i18n-suffix=\"@@coinUnit\" suffix=\"d\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.location\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <add-remove-menu class=\"hover-menu\" [(array)]=\"character.magic\" min=\"1\" [default]=\"creator.newMagic.bind(creator)\"></add-remove-menu>\r\n          <table class=\"table table-responsive\">\r\n            <thead>\r\n              <tr>\r\n                <th i18n=\"@@magicAndCermonies\">Magi & cermonier</th>\r\n                <th i18n=\"@@magnitude\">Magnitude</th>\r\n                <th i18n=\"@@magicCheck\">Färdighetsslag & tillhörande svårighetsslag</th>\r\n                <th i18n=\"@@time\">Tidsåtgång</th>\r\n                <th i18n=\"@@duration\">Varaktighet</th>\r\n                <th i18n=\"@@range\">Räckvidd</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody [sortablejs]=\"character.magic\">\r\n              <tr *ngFor=\"let magic of character.magic\">\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.name\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"number\" [(value)]=\"magic.magnitude\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.description\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.time\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.duration\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.reach\"></input-base>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.contacts\" min=\"1\" [default]=\"creator.newContact.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@contact\">Kontakt/fiende</th>\r\n                    <th i18n=\"@@profession\">Yrke</th>\r\n                    <th i18n=\"@@relation\">Relation</th>\r\n                    <th i18n=\"@@resources\">Resurser</th>\r\n                    <th i18n=\"@@miscellaneous\">Övrigt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody [sortablejs]=\"character.contacts\">\r\n                  <tr *ngFor=\"let contact of character.contacts\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.profession\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.relation\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"contact.resources\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.description\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-12 flex-column\">\r\n        <div class=\"sub-form flex-column\">\r\n          <add-remove-menu class=\"hover-menu\" [(array)]=\"character.family.others\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n          <h3 i18n=\"@@family\">Familj & släkt</h3>\r\n          <div class=\"row\" aligned>\r\n            <div class=\"col col-lg-6 col-12\">\r\n              <form-input i18n-label=\"@@father\" label=\"Far\" [(value)]=\"character.family.father\"></form-input>\r\n            </div>\r\n            <div class=\"col col-lg-6 col-12\">\r\n              <form-input i18n-label=\"@@mother\" label=\"Mor\" [(value)]=\"character.family.mother\"></form-input>\r\n            </div>\r\n          </div>\r\n          <div class=\"table-responsive\">\r\n            <table class=\"table\">\r\n              <tbody [sortablejs]=\"character.family.others\">\r\n                <tr *ngFor=\"let family of character.family.others\">\r\n                  <td>\r\n                    <input-base type=\"text\" [(value)]=\"family.value\"></input-base>\r\n                  </td>\r\n                </tr>\r\n              </tbody>\r\n            </table>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.animals\" min=\"1\" [default]=\"creator.newAnimal.bind(creator)\"></add-remove-menu>\r\n            <h3 i18n=\"@@animals\">Rid- & packdjur</h3>\r\n            <div *ngFor=\"let animal of character.animals\">\r\n              <div class=\"table-responsive\">\r\n                <table class=\"table\">\r\n                  <thead>\r\n                    <tr>\r\n                      <th i18n=\"@@name\">Namn</th>\r\n                      <th i18n=\"@@carryingCapacityAbbreviation\">BF</th>\r\n                      <th i18n=\"@@speed\">FÖR</th>\r\n                      <th i18n=\"@@crush\">Kross</th>\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr>\r\n                      <td>\r\n                        <input-base type=\"text\" [(value)]=\"animal.name\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-base type=\"number\" [(value)]=\"animal.carryingCapacity\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-base type=\"number\" [(value)]=\"animal.movement\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-group prefix=\"Ob\" [(value)]=\"animal.damage\" type=\"text\"></input-group>\r\n                      </td>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"animal.inventory\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@equipment\">Utrustning</th>\r\n                        <th i18n=\"@@weight\">Vikt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"equipment-zone\" [dragulaModel]=\"animal.inventory\">\r\n                      <tr *ngFor=\"let item of animal.inventory\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"animal.techniques\" min=\"2\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                <h4 class=\"col col-12\" i18n=\"@@tricksAndAbilities\">Speciella trick och egenskaper</h4>\r\n                <div [sortablejs]=\"animal.techniques\" class=\"row\">\r\n                  <input-base class=\"col col-lg-6 col-md-6 col-12\" *ngFor=\"let technique of animal.techniques\" type=\"text\" [(value)]=\"technique.value\"></input-base>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-12 flex-column\">\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.itemsCarried\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipment\">Burna föremål</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.itemsCarried\">\r\n                  <tr *ngFor=\"let item of character.equipment.itemsCarried\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.luggage\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipment\">Utrustning</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.luggage\">\r\n                  <tr *ngFor=\"let luggage of character.equipment.luggage\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"luggage.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"luggage.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.itemsStorage\" min=\"1\" [default]=\"creator.newItemStorage.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipmentStorage\">Utrustning (Förvaring)</th>\r\n                    <th i18n=\"@@location\">Förvaring</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.itemsStorage\">\r\n                  <tr *ngFor=\"let item of character.equipment.itemsStorage\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.location\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <rations-tracker [item]=\"character.rations\"></rations-tracker>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<localization [source]=\"localization\" \r\n  i18n-strength=\"@@strength\" strength=\"STY\" (strengthChange)=\"character.attributes.strength.name=$event\"\r\n  i18n-constitution=\"@@constitution\" constitution=\"TÅL\" (constitutionChange)=\"character.attributes.constitution.name=$event\"\r\n  i18n-dexterity=\"@@dexterity\" dexterity=\"RÖR\" (dexterityChange)=\"character.attributes.dexterity.name=$event\"\r\n  i18n-charisma=\"@@charisma\" charisma=\"PER\" (charismaChange)=\"character.attributes.charisma.name=$event\" \r\n  i18n-intelligence=\"@@intelligence\" intelligence=\"PSY\" (intelligenceChange)=\"character.attributes.intelligence.name=$event\"\r\n  i18n-will=\"@@will\" will=\"VIL\" (willChange)=\"character.attributes.will.name=$event\"\r\n  i18n-education=\"@@education\" education=\"BIL\" (educationChange)=\"character.attributes.education.name=$event\"\r\n  i18n-sight=\"@@sight\" sight=\"SYN\" (sightChange)=\"character.attributes.sight.name=$event\"\r\n  i18n-hearing=\"@@hearing\" hearing=\"HÖR\" (hearingChange)=\"character.attributes.hearing.name=$event\"\r\n  i18n-eon4will=\"@@eon4will\" eon4will=\"Eon IV Vilja\" (eon4willChange)=\"character.attributes.eon4will.name=$event\"\r\n  i18n-combatExperience=\"@@combatExperience\" combatExperience=\"Stridsvana\" (combatExperienceChange)=\"character.attributes.combatExperience.name=$event\"\r\n  i18n-charismaIntelligenceSkill=\"@@charismaIntelligenceSkill\" charismaIntelligenceSkill=\"[PP]\" (charismaIntelligenceSkillChange)=\"character.inferedBaseSkills.charismaIntelligence.name=$event\"\r\n  i18n-dexterityIntelligenceSkill=\"@@dexterityIntelligenceSkill\" dexterityIntelligenceSkill=\"[RP]\" (dexterityIntelligenceSkillChange)=\"character.inferedBaseSkills.dexterityIntelligence.name=$event\"\r\n  i18n-sightIntelligenceSkill=\"@@sightIntelligenceSkill\" sightIntelligenceSkill=\"[PS]\" (sightIntelligenceSkillChange)=\"character.inferedBaseSkills.sightIntelligence.name=$event\"\r\n  i18n-nativeLanguageSkill=\"@@nativeLanguageSkill\" nativeLanguageSkill=\"Modersmål\" (nativeLanguageSkillChange)=\"character.inferedBaseSkills.nativeLanguage.name=$event\"\r\n  i18n-dexteritySkill=\"@@dexteritySkill\" dexteritySkill=\"[R]\" (dexteritySkillChange)=\"character.inferedBaseSkills.dexterity.name=$event\"\r\n  i18n-intelligenceSkill=\"@@intelligenceSkill\" intelligenceSkill=\"[P]\" (intelligenceSkillChange)=\"character.inferedBaseSkills.intelligence.name=$event\"\r\n  i18n-constitutionSkill=\"@@constitutionSkill\" constitutionSkill=\"[T]\" (constitutionSkillChange)=\"character.inferedBaseSkills.constitution.name=$event\"\r\n  i18n-educationSkill=\"@@educationSkill\" educationSkill=\"[B]\" (educationSkillChange)=\"character.inferedBaseSkills.education.name=$event\"\r\n  i18n-storyTellingSkill=\"@@storyTellingSkill\" storyTellingSkill=\"Berättarkonst\" (storyTellingSkillChange)=\"character.skills.storyTelling.name=$event\"\r\n  i18n-danceSkill=\"@@danceSkill\" danceSkill=\"Dansa\" (danceSkillChange)=\"character.skills.dance.name=$event\"\r\n  i18n-sleightOfHandSkill=\"@@sleightOfHandSkill\" sleightOfHandSkill=\"Fingerfärdighet\" (sleightOfHandSkillChange)=\"character.skills.sleightOfHand.name=$event\"\r\n  i18n-fishingSkill=\"@@fishingSkill\" fishingSkill=\"Fiske\" (fishingSkillChange)=\"character.skills.fishing.name=$event\"\r\n  i18n-seductionSkill=\"@@seductionSkill\" seductionSkill=\"Förföra\" (seductionSkillChange)=\"character.skills.seduction.name=$event\"\r\n  i18n-interogateSkill=\"@@interogateSkill\" interogateSkill=\"Förhöra\" (interogateSkillChange)=\"character.skills.interogate.name=$event\"\r\n  i18n-jestSkill=\"@@jestSkill\" jestSkill=\"Gyckla\" (jestSkillChange)=\"character.skills.jest.name=$event\"\r\n  i18n-hideSkill=\"@@hideSkill\" hideSkill=\"Gömma\" (hideSkillChange)=\"character.skills.hide.name=$event\"\r\n  i18n-tradeSkill=\"@@tradeSkill\" tradeSkill=\"Handel\" (tradeSkillChange)=\"character.skills.trade.name=$event\"\r\n  i18n-jumpSkill=\"@@jumpSkill\" jumpSkill=\"Hoppa\" (jumpSkillChange)=\"character.skills.jump.name=$event\"\r\n  i18n-throwSkill=\"@@throwSkill\" throwSkill=\"Kasta\" (throwSkillChange)=\"character.skills.throw.name=$event\"\r\n  i18n-climbSkill=\"@@climbSkill\" climbSkill=\"Klättra\" (climbSkillChange)=\"character.skills.climb.name=$event\"\r\n  i18n-driveWagonSkill=\"@@driveWagonSkill\" driveWagonSkill=\"Köra vagn\" (driveWagonSkillChange)=\"character.skills.driveWagon.name=$event\"\r\n  i18n-leadershipSkill=\"@@leadershipSkill\" leadershipSkill=\"Ledarskap\" (leadershipSkillChange)=\"character.skills.leadership.name=$event\"\r\n  i18n-marschSkill=\"@@marschSkill\" marschSkill=\"Marsch\" (marschSkillChange)=\"character.skills.marsch.name=$event\"\r\n  i18n-cookingSkill=\"@@cookingSkill\" cookingSkill=\"Matlagning\" (cookingSkillChange)=\"character.skills.cooking.name=$event\"\r\n  i18n-occultismSkill=\"@@occultismSkill\" occultismSkill=\"Ockultism\" (occultismSkillChange)=\"character.skills.occultism.name=$event\"\r\n  i18n-rideSkill=\"@@rideSkill\" rideSkill=\"Rida\" (rideSkillChange)=\"character.skills.ride.name=$event\"\r\n  i18n-singSkill=\"@@singSkill\" singSkill=\"Sjunga\" (singSkillChange)=\"character.skills.sing.name=$event\"\r\n  i18n-skiSkill=\"@@skiSkill\" skiSkill=\"Skidor\" (skiSkillChange)=\"character.skills.ski.name=$event\"\r\n  i18n-actingSkill=\"@@actingSkill\" actingSkill=\"Skådespel\" (actingSkillChange)=\"character.skills.acting.name=$event\"\r\n  i18n-brawlSkill=\"@@brawlSkill\" brawlSkill=\"Slagsmål\" (brawlSkillChange)=\"character.skills.brawl.name=$event\"\r\n  i18n-sneakSkill=\"@@sneakSkill\" sneakSkill=\"Smyga\" (sneakSkillChange)=\"character.skills.sneak.name=$event\"\r\n  i18n-scoutSkill=\"@@scoutSkill\" scoutSkill=\"Speja\" (scoutSkillChange)=\"character.skills.scout.name=$event\"\r\n  i18n-gamblingSkill=\"@@gamblingSkill\" gamblingSkill=\"Spel & dobbel\" (gamblingSkillChange)=\"character.skills.gambling.name=$event\"\r\n  i18n-trackingSkill=\"@@trackingSkill\" trackingSkill=\"Spåra\" (trackingSkillChange)=\"character.skills.tracking.name=$event\"\r\n  i18n-drinkingSkill=\"@@drinkingSkill\" drinkingSkill=\"Supa\" (drinkingSkillChange)=\"character.skills.drinking.name=$event\"\r\n  i18n-searchSkill=\"@@searchSkill\" searchSkill=\"Söka\" (searchSkillChange)=\"character.skills.search.name=$event\"\r\n  i18n-educateSkill=\"@@educateSkill\" educateSkill=\"Undervisning\" (educateSkillChange)=\"character.skills.educate.name=$event\"\r\n  i18n-avoidSkill=\"@@avoidSkill\" avoidSkill=\"Undvika\" (avoidSkillChange)=\"character.skills.avoid.name=$event\"\r\n  i18n-appraiseSkill=\"@@appraiseSkill\" appraiseSkill=\"Värdera\" (appraiseSkillChange)=\"character.skills.appraise.name=$event\"\r\n  i18n-survivalSkill=\"@@survivalSkill\" survivalSkill=\"Överlevnad\" (survivalSkillChange)=\"character.skills.survival.name=$event\"\r\n  i18n-persuadeSkill=\"@@persuadeSkill\" persuadeSkill=\"Övertala\" (persuadeSkillChange)=\"character.skills.persuade.name=$event\">\r\n</localization>\r\n<!--Character export/import, online/cloud storage, localization switching(?)-->\r\n<!--TODO vapen färdigheter\r\n    Gör så att färdighets fönstret öppnar en skill selection från misc skills + stridskonster\r\n    Gör om så att misc skills och combat arts är samma bas objekt? Nej, gör så att de båda har ett interface som heter Value el liknande.\r\n    Gör misc skills skillt från character skills? Nej, gör så att man kan välja bas skill för en misc skill, t.ex. svärd.\r\n    Meyn för bas skill selection kan komma upp när man väljer värde/markerar värde\r\n-->\r\n<div class=\"pages\">\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"flex-row\" style=\"flex-direction:row-reverse\">\r\n          <div style=\"flex: 1 0 350px\" class=\"flex-column\">\r\n            <div class=\"sub-form\">\r\n              <h1>EON III</h1>\r\n            </div>\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <div class=\"flex-form-input\" style=\"height:100%\" aligned selector=\"form-input label, input-group label\">\r\n                  <div>\r\n                    <form-input i18n-label=\"@@name\" label=\"Namn\" [(value)]=\"character.name\"></form-input>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@Profession\" label=\"Yrke\" [(value)]=\"character.profession\"></form-input>\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    <div class=\"col col-md-6 col-12\">\r\n                      <form-input i18n-label=\"@@race\" label=\"Ras\" [(value)]=\"character.race\"></form-input>\r\n                      <form-input i18n-label=\"@@gender\" label=\"Kön\" [(value)]=\"character.gender\"></form-input>\r\n                      <form-input i18n-label=\"@@body\" label=\"Kropp\" [(value)]=\"character.body\"></form-input>\r\n                    </div>\r\n                    <div class=\"col col-md-6 col-12\">\r\n                      <input-group i18n-label=\"@@height\" label=\"Längd\" [(value)]=\"character.height\" i18n-suffix=\"@@heightUnit\" suffix=\"cm\" type=\"text\"></input-group>\r\n                      <input-group i18n-label=\"@@weight\" label=\"Vikt\" [(value)]=\"character.weight\" i18n-suffix=\"@@weightUnit\" suffix=\"kg\" type=\"text\"></input-group>\r\n                      <input-group i18n-label=\"@@age\" label=\"Ålder\" [(value)]=\"character.age\" i18n-suffix=\"@@ageUnit\" suffix=\"år\" type=\"text\"></input-group>\r\n                    </div>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@homestead\" label=\"Hemort\" [(value)]=\"character.homestead\"></form-input>\r\n                  </div>\r\n                  <div>\r\n                    <form-input i18n-label=\"@@religion\" label=\"Religion\" [(value)]=\"character.religion\"></form-input>\r\n                  </div>\r\n                  <div style=\"display:flex\">\r\n                    <label i18n=\"@@weaponarm\">Vapenarm</label>\r\n                    <div style=\"flex: 1 0 auto;display:flex;justify-content:space-around\">\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-right' class='pseudo-checkbox sr-only' value=\"right\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@right\" for='weapon-arm-right' class='fancy-checkbox-label'>\r\n                          Höger\r\n                        </label>\r\n                      </div>\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-left' class='pseudo-checkbox sr-only' value=\"left\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@left\" for='weapon-arm-left' class='fancy-checkbox-label'>\r\n                          Vänster\r\n                        </label>\r\n                      </div>\r\n                      <div>\r\n                        <input type='radio' id='weapon-arm-ambidextrous' class='pseudo-checkbox sr-only' value=\"ambidextrous\" [(ngModel)]=\"character.handDominance\"\r\n                        />\r\n                        <label i18n=\"@@ambidextrous\" for='weapon-arm-ambidextrous' class='fancy-checkbox-label'>\r\n                          Tvehänt\r\n                        </label>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div aligned style=\"flex: 0 0 auto\" class=\"flex-column\">\r\n            <div class=\"sub-form flex-column\">\r\n              <form-input [label]=\"character.attributes.strength.name\" [(value)]=\"character.attributes.strength.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.constitution.name\" [(value)]=\"character.attributes.constitution.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.dexterity.name\" [(value)]=\"character.attributes.dexterity.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.charisma.name\" [(value)]=\"character.attributes.charisma.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.intelligence.name\" [(value)]=\"character.attributes.intelligence.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.will.name\" [(value)]=\"character.attributes.will.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.education.name\" [(value)]=\"character.attributes.education.value\" type=\"number\"></form-input>\r\n            </div>\r\n            <div class=\"sub-form flex-column\">\r\n              <add-remove-menu class=\"hover-menu\" [(array)]=\"character.attributes.extraAttributes\" min=\"0\" [default]=\"creator.newAttribute.bind(creator)\"></add-remove-menu>\r\n              <form-input [label]=\"character.attributes.sight.name\" [(value)]=\"character.attributes.sight.value\" type=\"number\"></form-input>\r\n              <form-input [label]=\"character.attributes.hearing.name\" [(value)]=\"character.attributes.hearing.value\" type=\"number\"></form-input>\r\n              <form-input *ngFor=\"let a of character.attributes.extraAttributes\" labelEditable=\"true\" [(label)]=\"a.name\" [(value)]=\"a.value\"\r\n                type=\"number\"></form-input>\r\n            </div>\r\n          </div>\r\n          <div style=\"flex: 1 0 300px\" class=\"flex-column\" aligned>\r\n            <div class=\"sub-form\" style=\"flex-grow:0\">\r\n              <div class=\"flex-form-input\">\r\n                <form-input i18n-label=\"@@player\" label=\"Spelare\" [(value)]=\"character.player\"></form-input>\r\n                <form-input i18n-label=\"@@gamemaster\" label=\"Spelledare\" [(value)]=\"character.gameMaster\"></form-input>\r\n              </div>\r\n            </div>\r\n            <div class=\"flex-form-input sub-form\">\r\n              <character-stat-input i18n-label=\"@@loyalty\" label=\"Lojalitet\" [stat]=\"character.characteristics.loyalty\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@honor\" label=\"Heder\" [stat]=\"character.characteristics.honor\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@lust\" label=\"Amor\" [stat]=\"character.characteristics.lust\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@aggression\" label=\"Aggression\" [stat]=\"character.characteristics.aggression\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@faith\" label=\"Tro\" [stat]=\"character.characteristics.faith\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@generosity\" label=\"Generositet\" [stat]=\"character.characteristics.generosity\"></character-stat-input>\r\n              <character-stat-input i18n-label=\"@@reputation\" label=\"Rykte {{formatDefaultValue(DefaultValues.reputation)}}\" [stat]=\"character.characteristics.reputation\"></character-stat-input>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div class=\"col col-lg-8 col-md-12 col-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row\">\r\n              <div class=\"col col-md-7 col-12 flex-column\">\r\n\r\n                <div class=\"sub-form\">\r\n                  <div>\r\n                    <add-remove-menu class=\"hover-menu\" [(array)]=\"character.specialAbilities\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                    <div class=\"flex-form-input flex-column-flex table-responsive\">\r\n                      <table class=\"table\">\r\n                        <thead>\r\n                          <th i18n=\"@@specialAbilities\">Speciella fördelar & nackdelar</th>\r\n                        </thead>\r\n                        <tbody [sortablejs]=\"character.specialAbilities\">\r\n                          <tr *ngFor='let a of character.specialAbilities'>\r\n                            <td>\r\n                              <input-base type=\"text\" [(value)]=\"a.value\"></input-base>\r\n                            </td>\r\n                          </tr>\r\n                        </tbody>\r\n                      </table>\r\n                      <!--TODO have another field with EON 4 mental problems?-->\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col col-md-5 col-12 flex-column\">\r\n                <div class=\"row\" style=\"flex-grow:0\">\r\n                  <div class=\"col col-6 sub-form form-input\">\r\n                    <form-input i18n-label=\"@@luck\" label=\"Tur {{formatDefaultValue(DefaultValues.luck)}}\" [(value)]=\"character.attributes.luck.value\"\r\n                      type=\"number\"></form-input>\r\n                  </div>\r\n                  <div class=\"col col-6 sub-form form-input\">\r\n                    <form-input label=\"Qadosh\" [(value)]=\"character.attributes.qadosh.value\" type=\"number\"></form-input>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row sub-form\" aligned>\r\n                  <div class=\"col col-12\">\r\n                    <input-computed style=\"display: inline-block\" i18n-label=\"@@movement\" label=\"FÖR\" [computationBase]=\"character.inferedAttributes.speed\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.speed.expression\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-12\">\r\n                    <form-input style=\"display: inline-block\" i18n-label=\"@@running\" label=\"Språng\" [value]=\"character.inferedAttributes.speed.value * 2\"\r\n                      type=\"number\" [readonly]=\"true\"></form-input>\r\n                    <computed-expression expression=\"dexterity * 2\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-12\">\r\n                    <form-input style=\"display: inline-block\" i18n-label=\"@@sprinting\" label=\"Spurt\" [value]=\"character.inferedAttributes.speed.value * 3\"\r\n                      type=\"number\" [readonly]=\"true\"></form-input>\r\n                    <computed-expression expression=\"dexterity * 3\" [expressionLookupTable]=\"character.inferedAttributes.speed.baseValues\"></computed-expression>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row sub-form\">\r\n                  <ng-template #insentivityRow let-insentivity=\"insentivity\" let-label=\"label\" let-maxLevel=\"maxLevel\" let-thresholds=\"thresholds\">\r\n                    <td>\r\n                      <div><!--\r\n                        <increment-decrement-menu class=\"hover-menu\" [(value)]=\"insentivity.value\" min=\"0\" [max]=\"maxLevel\"></increment-decrement-menu>-->\r\n                        <label>{{label}}</label>\r\n                      </div>\r\n                    </td>\r\n                    <td *ngFor=\"let r of thresholds; let i = index\">\r\n                      <input-box [checked]=\"i < insentivity.value\" type=\"square\" fill=\"solid\" (click)=\"insentivity.value == i + 1 ? insentivity.value = insentivity.value - 1 : insentivity.value = i + 1\"></input-box>\r\n                    </td>\r\n                  </ng-template>\r\n\r\n                  <!--\r\n                    <h3 i18n=\"@@insensitivity\">Avtrubbning</h3>-->\r\n                  <table class=\"table\" style=\"margin:0px\">\r\n                    <tbody>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.exposure, label: 'Utsatthet', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.violence, label: 'Våld', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <ng-template *ngTemplateOutlet=\"insentivityRow;  context: { insentivity: character.insensitivities.supernatural, label: 'Övernaturligt', maxLevel: character.maxInsensitivitylevel, thresholds:  character.insensitivityThresholds}\"></ng-template>\r\n                      </tr>\r\n                      <tr>\r\n                        <td></td>\r\n                        <td *ngFor=\"let insensitivityThreshold of character.insensitivityThresholds; let i = index\">\r\n                          {{insensitivityThreshold}}\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                  <form-input i18n-label=\"@@will\" [label]=\"character.attributes.eon4will.name\" [(value)]=\"character.attributes.eon4will.value\" type=\"text\"></form-input>\r\n                </div>\r\n                <div class=\"row sub-form\">\r\n                  <table class=\"table\">\r\n                    <tbody>\r\n                      <tr style=\"margin-bottom: 2px\">\r\n                        <td i18n=\"@@focus\">\r\n                          <label>Fokus</label>\r\n                        </td>\r\n                        <td *ngFor=\"let r of character.maxWellBeing/2 | arrayConstructor; let i = index\" style=\"line-height:16px\">\r\n                          <input-box [checked]=\"i < character.focus\" type=\"circle\" fill=\"solid\" style=\"line-height:1px\" \r\n                          (click)=\"character.focus == i + 1 ? character.focus = character.focus - 1 : character.focus = i + 1\"></input-box>\r\n                          <input-box [checked]=\"(i + character.maxWellBeing/2) < character.focus\" type=\"circle\" fill=\"solid\" \r\n                          (click)=\"character.focus == (i + character.maxWellBeing/2)  + 1 ? character.focus = character.focus - 1 : character.focus = (i + character.maxWellBeing/2)  + 1\"></input-box>\r\n                        </td>\r\n                      </tr>\r\n                      <tr>\r\n                        <td i18n=\"@@wellBeing\">\r\n                          <div>\r\n                            <label>Välmående</label>\r\n                          </div>\r\n                        </td>\r\n                        <td *ngFor=\"let r of character.maxWellBeing/2 | arrayConstructor; let i = index\" style=\"line-height:16px\">\r\n                          <input-box [checked]=\"i < character.wellBeing\" type=\"circle\" fill=\"solid\" \r\n                          (click)=\"character.wellBeing == i + 1 ? character.wellBeing = character.wellBeing - 1 : character.wellBeing = i + 1\"></input-box>\r\n                          <input-box [checked]=\"(i + character.maxWellBeing/2 ) < character.wellBeing\" type=\"circle\" fill=\"solid\" \r\n                          (click)=\"character.wellBeing == (i + character.maxWellBeing/2)  + 1 ? character.wellBeing = character.wellBeing - 1 : character.wellBeing = (i + character.maxWellBeing/2)  + 1\"></input-box>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row sub-form\" aligned>\r\n              <h3 class=\"col col-3\" i18n=\"@@baseDamage\">Grundskada</h3>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@slash\" label=\"Hugg\" prefix=\"Ob\" [(value)]=\"character.baseDamage.slash\" type=\"text\"></input-group>\r\n              </div>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@crush\" label=\"Kross\" prefix=\"Ob\" [(value)]=\"character.baseDamage.crush\" type=\"text\"></input-group>\r\n              </div>\r\n              <div class=\"col col-3 form-input\">\r\n                <input-group i18n-label=\"@@pierce\" label=\"Stick\" prefix=\"Ob\" [(value)]=\"character.baseDamage.pierce\" type=\"text\"></input-group>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-4 col-md-12 col-12 flex-column\">\r\n        <div class=\"row sub-form\">\r\n          <character-characteristic i18n-label=\"@@primaryCharacteristic\" label=\"Primärt karaktärsdrag\" [characteristic]=\"character.characteristics.primary\"\r\n            style=\"margin-bottom: 2px\"></character-characteristic>\r\n          <character-characteristic i18n-label=\"@@secondaryCharacteristic\" label=\"Sekundärt karaktärsdrag\" [characteristic]=\"character.characteristics.secondary\"></character-characteristic>\r\n        </div>\r\n        <div class=\"row sub-form\">\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@clothesAndArmor\">Kläder & rustning</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">&#215;0.5 =</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightBodyArmor())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@weaponsAndShields\">Vapen & sköldar</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightWeaponsShields())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@carriedItemsAndCoins\">Burna föremål, mynt etc. </label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightCarriedItems())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@luggage\">Utrustning & proviant</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">+</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightLuggage())\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"flex-wrap:wrap\">\r\n            <label class=\"flex-field\" i18n=\"@@totalLoad\">Total belastning</label>\r\n            <div style=\"display:flex;flex-wrap:wrap\">\r\n              <span class=\"formula\">=</span>\r\n              <input-group i18n-suffix=\"@@weightUnit\" suffix=\"kg\" [value]=\"formatWeightSum(sumWeightTotal(),3)\" type=\"number\"></input-group>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12\">\r\n            <hr />\r\n          </div>\r\n          <div class=\"col col-12 form-input\" style=\"justify-content:space-between\">\r\n            <div>\r\n              <label class=\"flex-field\" i18n=\"@@carryingCapacity\">Bärförmåga</label>\r\n            </div>\r\n            <div>\r\n              <computed-expression right=\"true\" [expression]=\"character.inferedAttributes.carryingCapacity.expression\" [expressionLookupTable]=\"character.inferedAttributes.carryingCapacity.baseValues\"></computed-expression>\r\n              <input-computed [computationBase]=\"character.inferedAttributes.carryingCapacity\" i18n-suffix=\"@@weightUnit\" suffix=\"kg\"></input-computed>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"row\" aligned selector=\"th:first-child\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.meleeWeapons\" min=\"1\" [default]=\"creator.newMeleeWeapon.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@meleeWeapons\">Närstridsvapen</th>\r\n                    <th i18n=\"@@skill\">Färdighet</th>\r\n                    <th i18n=\"@@grip\">Fattning</th>\r\n                    <th i18n=\"@@slash\">Hugg</th>\r\n                    <th i18n=\"@@crush\">Kross</th>\r\n                    <th i18n=\"@@pierce\">Stick</th>\r\n                    <th i18n=\"@@durability\">BRYT</th>\r\n                    <th i18n=\"@@speed\">SI</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody [sortablejs]=\"character.equipment.meleeWeapons\">\r\n                  <tr melee-weapon *ngFor='let weapon of character.equipment.meleeWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.rangedWeapons\" min=\"1\" [default]=\"creator.newRangedWeapon.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@rangedWeapons\">Avståndsvapen</th>\r\n                    <th i18n=\"@@skill\">Färdighet</th>\r\n                    <th i18n=\"@@range\">Avstånd</th>\r\n                    <th i18n=\"@@short\">Kort</th>\r\n                    <th i18n=\"@@normak\">Normal</th>\r\n                    <th i18n=\"@@far\">Långt</th>\r\n                    <th i18n=\"@@veryFar\">Mycket långt</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody ranged-weapon *ngFor='let weapon of character.equipment.rangedWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n                </tbody>\r\n                <!--\r\n                <tbody [sortablejs]=\"character.equipment.rangedWeapons\">\r\n                  <tr ranged-weapon *ngFor='let weapon of character.equipment.rangedWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n                  </tr>\r\n                </tbody>-->\r\n              </table>\r\n            </div>\r\n            <!--\r\n            <div class=\"rTable\">\r\n              <div class=\"rTableRow\">\r\n                  <div class=\"rTableHead\" i18n=\"@@rangedWeapons\">Avståndsvapen</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@skill\">Färdighet</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@range\">Avstånd</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@short\">Kort</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@normak\">Normal</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@far\">Långt</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@veryFar\">Mycket långt</div>\r\n                  <div class=\"rTableHead\" i18n=\"@@weight\">Vikt</div>\r\n              </div>\r\n              <ranged-weapon class=\"rTableBody\" *ngFor='let weapon of character.equipment.rangedWeapons' [item]=\"weapon.item\" [character]=\"character\" [(skill)]=\"weapon.skill\">\r\n              </ranged-weapon>\r\n             </div>-->\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-lg-8 col-12 flex-column\">\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <div>\r\n                  <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.shields\" min=\"1\" [default]=\"creator.newShield.bind(creator)\"></add-remove-menu>\r\n                  <div class=\"table-responsive\">\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                        <tr>\r\n                          <th i18n=\"@@shields\">Sköldar</th>\r\n                          <th i18n=\"@@skill\">Färdighet</th>\r\n                          <th i18n=\"@@passiveProtection\">Passivt s.</th>\r\n                          <th i18n=\"@@damage\">Skada</th>\r\n                          <th i18n=\"@@durability\">BRYT</th>\r\n                          <th i18n=\"@@speed\">SI</th>\r\n                          <th i18n=\"@@weight\">Vikt</th>\r\n                        </tr>\r\n                      </thead>\r\n                      <tbody [sortablejs]=\"character.equipment.shields\">\r\n                        <tr shield *ngFor='let shield of character.equipment.shields' [item]=\"shield.item\" [character]=\"character\" [(skill)]=\"shield.skill\">\r\n                        </tr>\r\n                      </tbody>\r\n                    </table>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <div>\r\n                  <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.armor\" min=\"1\" [default]=\"creator.newArmor.bind(creator)\"></add-remove-menu>\r\n                  <div class=\"table-responsive\">\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                        <tr>\r\n                          <th i18n=\"@@armor\">Kroppsskydd</th>\r\n                          <th i18n=\"@@protects\">Ger skydd åt</th>\r\n                          <th i18n=\"@@slash\">Hugg</th>\r\n                          <th i18n=\"@@crush\">Kross</th>\r\n                          <th i18n=\"@@pierce\">Stick</th>\r\n                          <th i18n=\"@@durability\">BRYT</th>\r\n                          <th i18n=\"@@weight\">Vikt</th>\r\n                        </tr>\r\n                      </thead>\r\n                      <tbody [sortablejs]=\"character.equipment.armor\">\r\n                        <tr armor *ngFor='let armor of character.equipment.armor' [item]=\"armor\">\r\n                        </tr>\r\n                      </tbody>\r\n                    </table>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-4 col-12 flex-column\">\r\n            <div class=\"row\">\r\n              <div class=\"col col-lg-12 col-md-6 col-sm-6 col-12 flex-column\">\r\n                <div class=\"row sub-form\" aligned>\r\n                  <div class=\"col col-sm-12 col-12\">\r\n                    <input-computed i18n=\"@@winInitiative\" label=\"VINIT\" [computationBase]=\"character.inferedAttributes.initiative\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.initiative.expression\" [expressionLookupTable]=\"character.inferedAttributes.initiative.baseValues\"></computed-expression>\r\n                  </div>\r\n                  <div class=\"col col-sm-12 col-12\">\r\n                    <input-computed i18n=\"@@insight\" label=\"Insikt\" [computationBase]=\"character.inferedAttributes.insight\"></input-computed>\r\n                    <computed-expression [expression]=\"character.inferedAttributes.insight.expression\" [expressionLookupTable]=\"character.inferedAttributes.insight.baseValues\"></computed-expression>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"col col-12 flex-column\">\r\n                    <div class=\"sub-form\">\r\n                      <input-computed i18n-label=\"@@blackOutCheck\" label=\"Chockslag\" [computationBase]=\"character.inferedAttributes.chockValue\"></input-computed>\r\n                      <computed-expression [expression]=\"character.inferedAttributes.chockValue.expression\" [expressionLookupTable]=\"character.inferedAttributes.chockValue.baseValues\"></computed-expression>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n              <div class=\"col col-lg-12 col-md-6 col-sm-6 col-12 flex-column\">\r\n                <div class=\"sub-form flex-form-input\">\r\n                  <damage-grid rows=\"11\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.exhaustion\" i18n-header=\"@@exhaustion\" header=\"Utmattning\"\r\n                    i18n-severDamageName=\"@@exhaustionLongterm\" severDamageName=\"Långtidsutmattning\">\r\n                    <ng-template #labelHeader>\r\n                      <div>\r\n                        <div style=\"width: 75%; display:inline-block;\">\r\n                          <span i18n=\"@@difficulty\" style=\"display:block;\">Svårighet</span>\r\n                        </div>\r\n                        <div style=\"width: 25%; display:inline-block;\">\r\n                          <span i18n=\"@@movement\" style=\"display:block;\">FÖR</span>\r\n                        </div>\r\n                      </div>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <div *ngIf=\"row % 2 === 0 && row > 1\">\r\n                        <label style=\"text-align: center;width:75%;display:inline-block\">+Ob{{row/2}}T6</label>\r\n                        <label style=\"text-align: center;width:25%;display:inline-block\">-{{row/2}}</label>\r\n                      </div>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-sm-12\">\r\n            <div class=\"flex-row\">\r\n              <div class=\"sub-form flex-form-input\">\r\n                <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.trauma\" i18n-header=\"@@trauma\" header=\"Trauma\">\r\n                  <ng-template #labelHeader>\r\n                    <span i18n=\"@@deathcheck\" style=\"display:block\">Dödslag</span>\r\n                    <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                  </ng-template>\r\n                  <ng-template #label let-row=\"row\">\r\n                    <label *ngIf=\"row > 0\" style=\"text-align: right;width:100%\">+Ob{{row}}T6</label>\r\n                  </ng-template>\r\n                </damage-grid>\r\n              </div>\r\n              <div class=\"sub-form flex-form-input\">\r\n                <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.pain\" i18n-header=\"@@pain\" header=\"Smärta\">\r\n                  <ng-template #labelHeader>\r\n                    <div style=\"width: 75%; display:inline-block;\">\r\n                      <div>\r\n                        <span i18n=\"@@difficulty\" style=\"display:block\">Svårighet</span>\r\n                        <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                      </div>\r\n                    </div>\r\n                    <div style=\"width: 25%; display:inline-block;\">\r\n                      <span i18n=\"@@movement\" style=\"display:block;\">FÖR</span>\r\n                    </div>\r\n                  </ng-template>\r\n                  <ng-template #label let-row=\"row\">\r\n                    <div *ngIf=\"row > 0\">\r\n                      <label style=\"text-align: center;width:75%;display:inline-block\">+Ob{{row}}T6</label>\r\n                      <label style=\"text-align: center;width:25%;display:inline-block\">-{{row}}</label>\r\n                    </div>\r\n                  </ng-template>\r\n                </damage-grid>\r\n              </div>\r\n              <div class=\"sub-form flex-row\">\r\n                <div class=\"flex-form-input\" style=\"flex: 1 0 auto\">\r\n                  <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" labelsRight=\"true\" type=\"square\" [damageColumns]=\"character.bleeding\"\r\n                    i18n-header=\"@@bloodloss\" header=\"Blödningstakt\">\r\n                    <ng-template #labelHeader>\r\n                      <span class=\"fa fa-long-arrow-right\" style=\"font-size:0.8cm;float:right\"></span>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <div>\r\n                        <label *ngIf=\"row === 0\" i18n=\"@@minute\" style=\"text-align: center;display:inline-block\">{{'+1/'}}min</label>\r\n                        <label *ngIf=\"row > 0\" i18n=\"@@round\" style=\"text-align: center;display:inline-block\">{{'+' + row + '/'}}runda</label>\r\n                      </div>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n                <div class=\"flex-form-input\" style=\"flex: 1 0 auto\">\r\n                  <damage-grid rows=\"10\" [columns]=\"maxDamageColumns\" [damageColumns]=\"character.bloodLoss\" i18n-header=\"@@bloodloss\" header=\"Blodförlust\">\r\n                    <ng-template #labelHeader>\r\n                      <span i18n=\"@@deathcheck\" style=\"display:block\">Dödslag</span>\r\n                      <span i18n=\"@@blackOutCheck\" style=\"display:block\">Chockslag</span>\r\n                    </ng-template>\r\n                    <ng-template #label let-row=\"row\">\r\n                      <label *ngIf=\"row > 1\" style=\"text-align: right;width:100%\">+Ob{{row - 1}}T6</label>\r\n                    </ng-template>\r\n                  </damage-grid>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <ng-template #skillBodyRow let-skill=\"skill\">\r\n    <td style=\"display:flex;justify-content:space-between\">\r\n      <label>{{skill.name}}</label>\r\n      <span>{{skill.baseValue.name}}</span>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.specialization\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n  <ng-template #miscellaneousSkillBodyRow let-skill=\"skill\">\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.name\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.specialization\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n  <ng-template #simpleSkillBodyRow let-skill=\"skill\">\r\n    <td>\r\n      <input-base type=\"text\" [(value)]=\"skill.name\"></input-base>\r\n    </td>\r\n    <td>\r\n      <input-base type=\"number\" [(value)]=\"skill.value\"></input-base>\r\n    </td>\r\n  </ng-template>\r\n\r\n  <!--TODO cast coin type on drag drop?-->\r\n\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-lg-6 col-md-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div class=\"table-responsive\">\r\n                <table class=\"table\">\r\n                  <thead>\r\n                    <tr>\r\n                      <th></th>\r\n                      <th i18n=\"@@value\">Värde</th>\r\n                      <th i18n=\"@@specialization\">Specialicering</th>\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr *ngFor=\"let skill of characterSkills\">\r\n                      <ng-template *ngTemplateOutlet=\"skillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"row sub-form\">\r\n              <div class=\"col col-12\">\r\n                <h3 i18n=\"@@baseSkillChanses\">Grundchanser för färdigheter</h3>\r\n              </div>\r\n              <div class=\"col col-12\">\r\n                <ng-template #baseSkill let-skill=\"skill\">\r\n                  <div>\r\n                    <input-computed [label]=\"skill.name\" [computationBase]=\"skill\" min=\"5\"></input-computed>\r\n                    <computed-expression [expression]=\"skill.expression\" [expressionLookupTable]=\"skill.baseValues\"></computed-expression>\r\n                  </div>\r\n                </ng-template>\r\n              </div>\r\n              <div class=\"col col-12\">\r\n                <div class=\"row\" aligned>\r\n                  <div class=\"col col-sm-6 col-12\">\r\n                    <div style=\"margin:auto\">\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.charismaIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.dexterityIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.sightIntelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.nativeLanguage}\"></ng-template>\r\n                    </div>\r\n                  </div>\r\n                  <div class=\"col col-sm-6 col-12\">\r\n                    <div style=\"margin:auto\">\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.dexterity}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.intelligence}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.constitution}\"></ng-template>\r\n                      <ng-template *ngTemplateOutlet=\"baseSkill; context: { skill: character.inferedBaseSkills.education}\"></ng-template>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.languageSkills\" min=\"1\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@language\">Språk</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.languageSkills\">\r\n                      <tr *ngFor=\"let skill of character.languageSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"simpleSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.scriptSkills\" min=\"1\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@script\">Skrift</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.scriptSkills\">\r\n                      <tr *ngFor=\"let skill of character.scriptSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"simpleSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-md-12 flex-column\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <form-input [label]=\"character.attributes.combatExperience.name\" [(value)]=\"character.attributes.combatExperience.value\"\r\n                  type=\"number\"></form-input>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.miscellaneousSkills\" min=\"5\" [default]=\"creator.newSkill.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@skills\">Färdigheter</th>\r\n                        <th i18n=\"@@value\">Värde</th>\r\n                        <th i18n=\"@@specialization\">Specialicering</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.miscellaneousSkills\">\r\n                      <tr *ngFor=\"let skill of character.miscellaneousSkills\">\r\n                        <ng-template *ngTemplateOutlet=\"miscellaneousSkillBodyRow;  context: { skill: skill}\"></ng-template>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <add-remove-menu class=\"hover-menu\" [(array)]=\"character.combatArts\" min=\"1\" [default]=\"creator.newCombatArtSkill.bind(creator)\"></add-remove-menu>\r\n              <h3 i18n=\"@@combatArts\">Stridskonster</h3>\r\n              <combat-art *ngFor=\"let combatArt of character.combatArts\" [combatArt]=\"combatArt\"></combat-art>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.miscellaneous\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@miscellaneous\">Övrigt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody [sortablejs]=\"character.miscellaneous\">\r\n                      <tr *ngFor=\"let misc of character.miscellaneous\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"misc.value\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.coins\" min=\"1\" [default]=\"creator.newCoin.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@valuables\">Värdeföremål</th>\r\n                        <th i18n=\"@@count\">Antal</th>\r\n                        <th i18n=\"@@worthEach\">Värde/st</th>\r\n                        <th i18n=\"@@weightEach\">Vikt/st</th>\r\n                        <th i18n=\"@@totalWeight\">Total vikt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"valuables-zone\" [dragulaModel]=\"character.equipment.coins\">\r\n                      <tr *ngFor=\"let coin of character.equipment.coins; let i = index\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"coin.count\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.worth\" i18n-suffix=\"@@coinUnit\" suffix=\"d\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.weight\" i18n-suffix=\"@@smallWeightUnit\" suffix=\"g\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [value]=\"coin.count && coin.weight ? coin.count * coin.weight : null\" i18n-suffix=\"@@smallWeightUnit\" suffix=\"g\"\r\n                            type=\"number\" readonly=\"true\"></input-group>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"col col-lg-6 col-12 flex-column\">\r\n            <div class=\"sub-form\">\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.coinsStorage\" min=\"1\" [default]=\"creator.newCoinStorage.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@valuables\">Värdeföremål (förvaring)</th>\r\n                        <th i18n=\"@@count\">Antal</th>\r\n                        <th i18n=\"@@worthEach\">Värde/st</th>\r\n                        <th i18n=\"@@location\">Förvaring</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"valuables-zone\" [dragulaModel]=\"character.equipment.coinsStorage\">\r\n                      <tr *ngFor=\"let coin of character.equipment.coinsStorage\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"coin.count\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-group [(value)]=\"coin.worth\" i18n-suffix=\"@@coinUnit\" suffix=\"d\" type=\"number\"></input-group>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"coin.location\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div size=\"A4\" class=\"page container\">\r\n    <div class=\"row\">\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <add-remove-menu class=\"hover-menu\" [(array)]=\"character.magic\" min=\"1\" [default]=\"creator.newMagic.bind(creator)\"></add-remove-menu>\r\n          <table class=\"table table-responsive\">\r\n            <thead>\r\n              <tr>\r\n                <th i18n=\"@@magicAndCeremonies\">Magi & ceremonier</th>\r\n                <th i18n=\"@@magnitude\">Magnitude</th>\r\n                <th i18n=\"@@magicCheck\">Färdighetsslag & tillhörande svårighetsslag</th>\r\n                <th i18n=\"@@time\">Tidsåtgång</th>\r\n                <th i18n=\"@@duration\">Varaktighet</th>\r\n                <th i18n=\"@@range\">Räckvidd</th>\r\n              </tr>\r\n            </thead>\r\n            <tbody [sortablejs]=\"character.magic\">\r\n              <tr *ngFor=\"let magic of character.magic\">\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.name\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"number\" [(value)]=\"magic.magnitude\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.description\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.time\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.duration\"></input-base>\r\n                </td>\r\n                <td>\r\n                  <input-base type=\"text\" [(value)]=\"magic.reach\"></input-base>\r\n                </td>\r\n              </tr>\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-12\">\r\n        <div class=\"sub-form\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.contacts\" min=\"1\" [default]=\"creator.newContact.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@contact\">Kontakt/fiende</th>\r\n                    <th i18n=\"@@profession\">Yrke</th>\r\n                    <th i18n=\"@@relation\">Relation</th>\r\n                    <th i18n=\"@@resources\">Resurser</th>\r\n                    <th i18n=\"@@miscellaneous\">Övrigt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody [sortablejs]=\"character.contacts\">\r\n                  <tr *ngFor=\"let contact of character.contacts\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.profession\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.relation\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"contact.resources\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"contact.description\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-12 flex-column\">\r\n        <div class=\"sub-form flex-column\">\r\n          <add-remove-menu class=\"hover-menu\" [(array)]=\"character.family.others\" min=\"1\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n          <h3 i18n=\"@@family\">Familj & släkt</h3>\r\n          <div class=\"row\" aligned>\r\n            <div class=\"col col-lg-6 col-12\">\r\n              <form-input i18n-label=\"@@father\" label=\"Far\" [(value)]=\"character.family.father\"></form-input>\r\n            </div>\r\n            <div class=\"col col-lg-6 col-12\">\r\n              <form-input i18n-label=\"@@mother\" label=\"Mor\" [(value)]=\"character.family.mother\"></form-input>\r\n            </div>\r\n          </div>\r\n          <div class=\"table-responsive\">\r\n            <table class=\"table\">\r\n              <tbody [sortablejs]=\"character.family.others\">\r\n                <tr *ngFor=\"let family of character.family.others\">\r\n                  <td>\r\n                    <input-base type=\"text\" [(value)]=\"family.value\"></input-base>\r\n                  </td>\r\n                </tr>\r\n              </tbody>\r\n            </table>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.animals\" min=\"1\" [default]=\"creator.newAnimal.bind(creator)\"></add-remove-menu>\r\n            <h3 i18n=\"@@animals\">Rid- & packdjur</h3>\r\n            <div *ngFor=\"let animal of character.animals\">\r\n              <div class=\"table-responsive\">\r\n                <table class=\"table\">\r\n                  <thead>\r\n                    <tr>\r\n                      <th i18n=\"@@name\">Namn</th>\r\n                      <th i18n=\"@@carryingCapacityAbbreviation\">BF</th>\r\n                      <th i18n=\"@@speed\">FÖR</th>\r\n                      <th i18n=\"@@crush\">Kross</th>\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr>\r\n                      <td>\r\n                        <input-base type=\"text\" [(value)]=\"animal.name\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-base type=\"number\" [(value)]=\"animal.carryingCapacity\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-base type=\"number\" [(value)]=\"animal.movement\"></input-base>\r\n                      </td>\r\n                      <td>\r\n                        <input-group prefix=\"Ob\" [(value)]=\"animal.damage\" type=\"text\"></input-group>\r\n                      </td>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"animal.inventory\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n                <div class=\"table-responsive\">\r\n                  <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th i18n=\"@@equipment\">Utrustning</th>\r\n                        <th i18n=\"@@weight\">Vikt</th>\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody dragula=\"equipment-zone\" [dragulaModel]=\"animal.inventory\">\r\n                      <tr *ngFor=\"let item of animal.inventory\">\r\n                        <td>\r\n                          <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                        </td>\r\n                        <td>\r\n                          <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                        </td>\r\n                      </tr>\r\n                    </tbody>\r\n                  </table>\r\n                </div>\r\n              </div>\r\n              <div>\r\n                <add-remove-menu class=\"hover-menu\" [(array)]=\"animal.techniques\" min=\"2\" [default]=\"creator.newStringValue.bind(creator)\"></add-remove-menu>\r\n                <h4 class=\"col col-12\" i18n=\"@@tricksAndAbilities\">Speciella trick och egenskaper</h4>\r\n                <div [sortablejs]=\"animal.techniques\" class=\"row\">\r\n                  <input-base class=\"col col-lg-6 col-md-6 col-12\" *ngFor=\"let technique of animal.techniques\" type=\"text\" [(value)]=\"technique.value\"></input-base>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col col-lg-6 col-12 flex-column\">\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.itemsCarried\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipment\">Burna föremål</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.itemsCarried\">\r\n                  <tr *ngFor=\"let item of character.equipment.itemsCarried\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.luggage\" min=\"1\" [default]=\"creator.newItem.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipment\">Utrustning</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.luggage\">\r\n                  <tr *ngFor=\"let luggage of character.equipment.luggage\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"luggage.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"luggage.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <div>\r\n            <add-remove-menu class=\"hover-menu\" [(array)]=\"character.equipment.itemsStorage\" min=\"1\" [default]=\"creator.newItemStorage.bind(creator)\"></add-remove-menu>\r\n            <div class=\"table-responsive\">\r\n              <table class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th i18n=\"@@equipmentStorage\">Utrustning (Förvaring)</th>\r\n                    <th i18n=\"@@location\">Förvaring</th>\r\n                    <th i18n=\"@@weight\">Vikt</th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody dragula=\"equipment-zone\" [dragulaModel]=\"character.equipment.itemsStorage\">\r\n                  <tr *ngFor=\"let item of character.equipment.itemsStorage\">\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.name\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"text\" [(value)]=\"item.location\"></input-base>\r\n                    </td>\r\n                    <td>\r\n                      <input-base type=\"number\" [(value)]=\"item.weight\"></input-base>\r\n                    </td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"sub-form flex-column\">\r\n          <rations-tracker [item]=\"character.rations\"></rations-tracker>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -472,6 +472,7 @@ module.exports = "<localization [object]=\"this\" i18n-strength=\"@@strength\" s
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CharacterSheetComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_character__ = __webpack_require__("./src/app/models/character.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_localization__ = __webpack_require__("./src/app/models/localization.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -483,17 +484,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CharacterSheetComponent = /** @class */ (function () {
     function CharacterSheetComponent(_el, _re) {
         this._el = _el;
         this._re = _re;
+        this._localization = new __WEBPACK_IMPORTED_MODULE_2__models_localization__["a" /* LocalizationObject */]();
         this.maxDamageColumns = 10;
         var self = this;
     }
-    //private _iCheck = 0;
     CharacterSheetComponent.prototype.ngDoCheck = function () {
-        //console.log("ngDoCheck", this._iCheck)
-        //this._iCheck++;
         var self = this;
         Object.keys(this.character.inferedAttributes).forEach(function (key) {
             self.character.inferedAttributes[key].updateValue();
@@ -501,6 +501,13 @@ var CharacterSheetComponent = /** @class */ (function () {
         Object.keys(this.character.inferedBaseSkills).forEach(function (key) {
             self.character.inferedBaseSkills[key].updateValue();
         });
+    };
+    CharacterSheetComponent.prototype.sumAttribute = function (items, attribute) {
+        return items.reduce(function (a, b) {
+            if (b[attribute] !== null && typeof b[attribute] !== 'undefined')
+                return a + Number(b[attribute]);
+            return a;
+        }, 0);
     };
     CharacterSheetComponent.prototype.sumWeights = function (items) {
         return items.reduce(function (a, b) {
@@ -527,6 +534,7 @@ var CharacterSheetComponent = /** @class */ (function () {
         var mapItems = function (a) { return a.item; };
         return this.sumWeights(this.character.equipment.meleeWeapons.map(mapItems)) +
             this.sumWeights(this.character.equipment.rangedWeapons.map(mapItems)) +
+            this.sumAttribute(this.character.equipment.rangedWeapons.map(mapItems), 'quiverWeight') +
             this.sumWeights(this.character.equipment.shields.map(mapItems));
     };
     CharacterSheetComponent.prototype.sumWeightCarriedItems = function () {
@@ -538,15 +546,75 @@ var CharacterSheetComponent = /** @class */ (function () {
     CharacterSheetComponent.prototype.sumWeightTotal = function () {
         return this.sumWeightBodyArmor() + this.sumWeightWeaponsShields() + this.sumWeightCarriedItems() + this.sumWeightLuggage();
     };
+    Object.defineProperty(CharacterSheetComponent.prototype, "localization", {
+        get: function () {
+            return this._localization;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CharacterSheetComponent.prototype, "character", {
         get: function () {
             return this._character;
         },
         set: function (value) {
             this._character = value;
+            this.character.attributes.strength.name = this.localization.strength;
+            this.character.attributes.constitution.name = this.localization.constitution;
+            this.character.attributes.dexterity.name = this.localization.dexterity;
+            this.character.attributes.charisma.name = this.localization.charisma;
+            this.character.attributes.intelligence.name = this.localization.intelligence;
+            this.character.attributes.will.name = this.localization.will;
+            this.character.attributes.education.name = this.localization.education;
+            this.character.attributes.sight.name = this.localization.sight;
+            this.character.attributes.hearing.name = this.localization.hearing;
+            this.character.attributes.eon4will.name = this.localization.eon4will;
+            this.character.attributes.combatExperience.name = this.localization.combatExperience;
+            this.character.inferedBaseSkills.education.name = this.localization.educationSkill;
+            this.character.inferedBaseSkills.constitution.name = this.localization.constitutionSkill;
+            this.character.inferedBaseSkills.dexterity.name = this.localization.dexteritySkill;
+            this.character.inferedBaseSkills.intelligence.name = this.localization.intelligenceSkill;
+            this.character.inferedBaseSkills.charismaIntelligence.name = this.localization.charismaIntelligenceSkill;
+            this.character.inferedBaseSkills.dexterityIntelligence.name = this.localization.dexterityIntelligenceSkill;
+            this.character.inferedBaseSkills.sightIntelligence.name = this.localization.sightIntelligenceSkill;
+            this.character.inferedBaseSkills.nativeLanguage.name = this.localization.nativeLanguageSkill;
+            this.character.skills.storyTelling.name = this.localization.storyTellingSkill;
+            this.character.skills.dance.name = this.localization.danceSkill;
+            this.character.skills.sleightOfHand.name = this.localization.sleightOfHandSkill;
+            this.character.skills.fishing.name = this.localization.fishingSkill;
+            this.character.skills.seduction.name = this.localization.seductionSkill;
+            this.character.skills.interogate.name = this.localization.interogateSkill;
+            this.character.skills.jest.name = this.localization.jestSkill;
+            this.character.skills.hide.name = this.localization.hideSkill;
+            this.character.skills.trade.name = this.localization.tradeSkill;
+            this.character.skills.jump.name = this.localization.jumpSkill;
+            this.character.skills.throw.name = this.localization.throwSkill;
+            this.character.skills.climb.name = this.localization.climbSkill;
+            this.character.skills.driveWagon.name = this.localization.driveWagonSkill;
+            this.character.skills.leadership.name = this.localization.leadershipSkill;
+            this.character.skills.marsch.name = this.localization.marschSkill;
+            this.character.skills.cooking.name = this.localization.cookingSkill;
+            this.character.skills.occultism.name = this.localization.occultismSkill;
+            this.character.skills.ride.name = this.localization.rideSkill;
+            this.character.skills.sing.name = this.localization.singSkill;
+            this.character.skills.ski.name = this.localization.skiSkill;
+            this.character.skills.acting.name = this.localization.actingSkill;
+            this.character.skills.brawl.name = this.localization.brawlSkill;
+            this.character.skills.sneak.name = this.localization.sneakSkill;
+            this.character.skills.scout.name = this.localization.scoutSkill;
+            this.character.skills.gambling.name = this.localization.gamblingSkill;
+            this.character.skills.tracking.name = this.localization.trackingSkill;
+            this.character.skills.drinking.name = this.localization.drinkingSkill;
+            this.character.skills.search.name = this.localization.searchSkill;
+            this.character.skills.educate.name = this.localization.educateSkill;
+            this.character.skills.avoid.name = this.localization.avoidSkill;
+            this.character.skills.appraise.name = this.localization.appraiseSkill;
+            this.character.skills.survival.name = this.localization.survivalSkill;
+            this.character.skills.persuade.name = this.localization.persuadeSkill;
             if (this.character) {
                 this._sortedCharacterSkills = this.sortCharacterSkills(this.character);
             }
+            //TODO set character attribute values from a localization object
         },
         enumerable: true,
         configurable: true
@@ -990,13 +1058,117 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var LocalizationDirective = /** @class */ (function () {
     function LocalizationDirective() {
+        this.strengthChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.constitutionChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dexterityChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.charismaChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.intelligenceChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.willChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.educationChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.sightChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.hearingChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.eon4willChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.combatExperienceChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.educationSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.constitutionSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dexteritySkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.intelligenceSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.charismaIntelligenceSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dexterityIntelligenceSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.sightIntelligenceSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.nativeLanguageSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.storyTellingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.danceSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.sleightOfHandSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.fishingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.seductionSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.interogateSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.jestSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.hideSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.tradeSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.jumpSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.throwSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.climbSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.driveWagonSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.leadershipSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.marschSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.cookingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.occultismSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.rideSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.singSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.skiSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.actingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.brawlSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.sneakSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.scoutSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.gamblingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.trackingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.drinkingSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.searchSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.educateSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.avoidSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.appraiseSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.survivalSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.persuadeSkillChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
-    Object.defineProperty(LocalizationDirective.prototype, "object", {
+    Object.defineProperty(LocalizationDirective.prototype, "source", {
         get: function () {
-            return this._object;
+            return this._src;
         },
         set: function (value) {
-            this._object = value;
+            this._src = value;
+            this.strength = this._src.strength;
+            this.constitution = this._src.constitution;
+            this.dexterity = this._src.dexterity;
+            this.charisma = this._src.charisma;
+            this.intelligence = this._src.intelligence;
+            this.will = this._src.will;
+            this.education = this._src.education;
+            this.sight = this._src.sight;
+            this.hearing = this._src.hearing;
+            this.eon4will = this._src.eon4will;
+            this.combatExperience = this._src.combatExperience;
+            this.educationSkill = this._src.educationSkill;
+            this.constitutionSkill = this._src.constitutionSkill;
+            this.dexteritySkill = this._src.dexteritySkill;
+            this.intelligenceSkill = this._src.intelligenceSkill;
+            this.charismaIntelligenceSkill = this._src.charismaIntelligenceSkill;
+            this.dexterityIntelligenceSkill = this._src.dexterityIntelligenceSkill;
+            this.sightIntelligenceSkill = this._src.sightIntelligenceSkill;
+            this.nativeLanguageSkill = this._src.nativeLanguageSkill;
+            this.storyTellingSkill = this._src.storyTellingSkill;
+            this.danceSkill = this._src.danceSkill;
+            this.sleightOfHandSkill = this._src.sleightOfHandSkill;
+            this.fishingSkill = this._src.fishingSkill;
+            this.seductionSkill = this._src.seductionSkill;
+            this.interogateSkill = this._src.interogateSkill;
+            this.jestSkill = this._src.jestSkill;
+            this.hideSkill = this._src.hideSkill;
+            this.tradeSkill = this._src.tradeSkill;
+            this.jumpSkill = this._src.jumpSkill;
+            this.throwSkill = this._src.throwSkill;
+            this.climbSkill = this._src.climbSkill;
+            this.driveWagonSkill = this._src.driveWagonSkill;
+            this.leadershipSkill = this._src.leadershipSkill;
+            this.marschSkill = this._src.marschSkill;
+            this.cookingSkill = this._src.cookingSkill;
+            this.occultismSkill = this._src.occultismSkill;
+            this.rideSkill = this._src.rideSkill;
+            this.singSkill = this._src.singSkill;
+            this.skiSkill = this._src.skiSkill;
+            this.actingSkill = this._src.actingSkill;
+            this.brawlSkill = this._src.brawlSkill;
+            this.sneakSkill = this._src.sneakSkill;
+            this.scoutSkill = this._src.scoutSkill;
+            this.gamblingSkill = this._src.gamblingSkill;
+            this.trackingSkill = this._src.trackingSkill;
+            this.drinkingSkill = this._src.drinkingSkill;
+            this.searchSkill = this._src.searchSkill;
+            this.educateSkill = this._src.educateSkill;
+            this.avoidSkill = this._src.avoidSkill;
+            this.appraiseSkill = this._src.appraiseSkill;
+            this.survivalSkill = this._src.survivalSkill;
+            this.persuadeSkill = this._src.persuadeSkill;
         },
         enumerable: true,
         configurable: true
@@ -1004,110 +1176,121 @@ var LocalizationDirective = /** @class */ (function () {
     Object.defineProperty(LocalizationDirective.prototype, "strength", {
         /*Attributes */
         get: function () {
-            return this.object.character.attributes.strength.name;
+            return this._src.strength;
         },
         set: function (value) {
-            this.object.character.attributes.strength.name = value;
+            this._src.strength = value;
+            this.strengthChange.emit(this._src.strength);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "constitution", {
         get: function () {
-            return this.object.character.attributes.constitution.name;
+            return this._src.constitution;
         },
         set: function (value) {
-            this.object.character.attributes.constitution.name = value;
+            this._src.constitution = value;
+            this.constitutionChange.emit(this._src.constitution);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "dexterity", {
         get: function () {
-            return this.object.character.attributes.dexterity.name;
+            return this._src.dexterity;
         },
         set: function (value) {
-            this.object.character.attributes.dexterity.name = value;
+            this._src.dexterity = value;
+            this.dexterityChange.emit(this._src.dexterity);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "charisma", {
         get: function () {
-            return this.object.character.attributes.charisma.name;
+            return this._src.charisma;
         },
         set: function (value) {
-            this.object.character.attributes.charisma.name = value;
+            this._src.charisma = value;
+            this.charismaChange.emit(this._src.charisma);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "intelligence", {
         get: function () {
-            return this.object.character.attributes.intelligence.name;
+            return this._src.intelligence;
         },
         set: function (value) {
-            this.object.character.attributes.intelligence.name = value;
+            this._src.intelligence = value;
+            this.intelligenceChange.emit(this._src.intelligence);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "will", {
         get: function () {
-            return this.object.character.attributes.will.name;
+            return this._src.will;
         },
         set: function (value) {
-            this.object.character.attributes.will.name = value;
+            this._src.will = value;
+            this.willChange.emit(this._src.will);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "education", {
         get: function () {
-            return this.object.character.attributes.education.name;
+            return this._src.education;
         },
         set: function (value) {
-            this.object.character.attributes.education.name = value;
+            this._src.education = value;
+            this.educationChange.emit(this._src.education);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "sight", {
         get: function () {
-            return this.object.character.attributes.sight.name;
+            return this._src.sight;
         },
         set: function (value) {
-            this.object.character.attributes.sight.name = value;
+            this._src.sight = value;
+            this.sightChange.emit(this._src.sight);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "hearing", {
         get: function () {
-            return this.object.character.attributes.hearing.name;
+            return this._src.hearing;
         },
         set: function (value) {
-            this.object.character.attributes.hearing.name = value;
+            this._src.hearing = value;
+            this.hearingChange.emit(this._src.hearing);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "eon4will", {
         get: function () {
-            return this.object.character.attributes.eon4will.name;
+            return this._src.eon4will;
         },
         set: function (value) {
-            this.object.character.attributes.eon4will.name = value;
+            this._src.eon4will = value;
+            this.eon4willChange.emit(this._src.eon4will);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "combatExperience", {
         get: function () {
-            return this.object.character.attributes.combatExperience.name;
+            return this._src.combatExperience;
         },
         set: function (value) {
-            this.object.character.attributes.combatExperience.name = value;
+            this._src.combatExperience = value;
+            this.combatExperienceChange.emit(this._src.combatExperience);
         },
         enumerable: true,
         configurable: true
@@ -1115,80 +1298,88 @@ var LocalizationDirective = /** @class */ (function () {
     Object.defineProperty(LocalizationDirective.prototype, "educationSkill", {
         /* Base skills*/
         get: function () {
-            return this.object.character.inferedBaseSkills.education.name;
+            return this._src.education;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.education.name = value;
+            this._src.educationSkill = value;
+            this.educationSkillChange.emit(this._src.educationSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "constitutionSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.constitution.name;
+            return this._src.constitution;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.constitution.name = value;
+            this._src.constitutionSkill = value;
+            this.constitutionSkillChange.emit(this._src.constitutionSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "dexteritySkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.dexterity.name;
+            return this._src.dexterity;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.dexterity.name = value;
+            this._src.dexteritySkill = value;
+            this.dexteritySkillChange.emit(this._src.dexteritySkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "intelligenceSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.intelligence.name;
+            return this._src.intelligence;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.intelligence.name = value;
+            this._src.intelligenceSkill = value;
+            this.intelligenceSkillChange.emit(this._src.intelligenceSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "charismaIntelligenceSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.charismaIntelligence.name;
+            return this._src.charismaIntelligenceSkill;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.charismaIntelligence.name = value;
+            this._src.charismaIntelligenceSkill = value;
+            this.charismaIntelligenceSkillChange.emit(this._src.charismaIntelligenceSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "dexterityIntelligenceSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.dexterityIntelligence.name;
+            return this._src.dexterityIntelligenceSkill;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.dexterityIntelligence.name = value;
+            this._src.dexterityIntelligenceSkill = value;
+            this.dexterityIntelligenceSkillChange.emit(this._src.dexterityIntelligenceSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "sightIntelligenceSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.sightIntelligence.name;
+            return this._src.sightIntelligenceSkill;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.sightIntelligence.name = value;
+            this._src.sightIntelligenceSkill = value;
+            this.sightIntelligenceSkillChange.emit(this._src.sightIntelligenceSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "nativeLanguageSkill", {
         get: function () {
-            return this.object.character.inferedBaseSkills.nativeLanguage.name;
+            return this._src.nativeLanguageSkill;
         },
         set: function (value) {
-            this.object.character.inferedBaseSkills.nativeLanguage.name = value;
+            this._src.nativeLanguageSkill = value;
+            this.nativeLanguageSkillChange.emit(this._src.nativeLanguageSkill);
         },
         enumerable: true,
         configurable: true
@@ -1196,330 +1387,363 @@ var LocalizationDirective = /** @class */ (function () {
     Object.defineProperty(LocalizationDirective.prototype, "storyTellingSkill", {
         /* Skills */
         get: function () {
-            return this.object.character.skills.storyTelling.name;
+            return this._src.storyTellingSkill;
         },
         set: function (value) {
-            this.object.character.skills.storyTelling.name = value;
+            this._src.storyTellingSkill = value;
+            this.storyTellingSkillChange.emit(this._src.storyTellingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "danceSkill", {
         get: function () {
-            return this.object.character.skills.dance.name;
+            return this._src.danceSkill;
         },
         set: function (value) {
-            this.object.character.skills.dance.name = value;
+            this._src.danceSkill = value;
+            this.danceSkillChange.emit(this._src.danceSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "sleightOfHandSkill", {
         get: function () {
-            return this.object.character.skills.sleightOfHand.name;
+            return this._src.sleightOfHandSkill;
         },
         set: function (value) {
-            this.object.character.skills.sleightOfHand.name = value;
+            this._src.sleightOfHandSkill = value;
+            this.sleightOfHandSkillChange.emit(this._src.sleightOfHandSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "fishingSkill", {
         get: function () {
-            return this.object.character.skills.fishing.name;
+            return this._src.fishingSkill;
         },
         set: function (value) {
-            this.object.character.skills.fishing.name = value;
+            this._src.fishingSkill = value;
+            this.fishingSkillChange.emit(this._src.fishingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "seductionSkill", {
         get: function () {
-            return this.object.character.skills.seduction.name;
+            return this._src.seductionSkill;
         },
         set: function (value) {
-            this.object.character.skills.seduction.name = value;
+            this._src.seductionSkill = value;
+            this.seductionSkillChange.emit(this._src.seductionSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "interogateSkill", {
         get: function () {
-            return this.object.character.skills.interogate.name;
+            return this._src.interogateSkill;
         },
         set: function (value) {
-            this.object.character.skills.interogate.name = value;
+            this._src.interogateSkill = value;
+            this.interogateSkillChange.emit(this._src.interogateSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "jestSkill", {
         get: function () {
-            return this.object.character.skills.jest.name;
+            return this._src.jestSkill;
         },
         set: function (value) {
-            this.object.character.skills.jest.name = value;
+            this._src.jestSkill = value;
+            this.jestSkillChange.emit(this._src.jestSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "hideSkill", {
         get: function () {
-            return this.object.character.skills.hide.name;
+            return this._src.hideSkill;
         },
         set: function (value) {
-            this.object.character.skills.hide.name = value;
+            this._src.hideSkill = value;
+            this.hideSkillChange.emit(this._src.hideSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "tradeSkill", {
         get: function () {
-            return this.object.character.skills.trade.name;
+            return this._src.tradeSkill;
         },
         set: function (value) {
-            this.object.character.skills.trade.name = value;
+            this._src.tradeSkill = value;
+            this.tradeSkillChange.emit(this._src.tradeSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "jumpSkill", {
         get: function () {
-            return this.object.character.skills.jump.name;
+            return this._src.jumpSkill;
         },
         set: function (value) {
-            this.object.character.skills.jump.name = value;
+            this._src.jumpSkill = value;
+            this.jumpSkillChange.emit(this._src.jumpSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "throwSkill", {
         get: function () {
-            return this.object.character.skills.throw.name;
+            return this._src.throwSkill;
         },
         set: function (value) {
-            this.object.character.skills.throw.name = value;
+            this._src.throwSkill = value;
+            this.throwSkillChange.emit(this._src.throwSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "climbSkill", {
         get: function () {
-            return this.object.character.skills.climb.name;
+            return this._src.climbSkill;
         },
         set: function (value) {
-            this.object.character.skills.climb.name = value;
+            this._src.climbSkill = value;
+            this.climbSkillChange.emit(this._src.climbSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "driveWagonSkill", {
         get: function () {
-            return this.object.character.skills.driveWagon.name;
+            return this._src.driveWagonSkill;
         },
         set: function (value) {
-            this.object.character.skills.driveWagon.name = value;
+            this._src.driveWagonSkill = value;
+            this.driveWagonSkillChange.emit(this._src.driveWagonSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "leadershipSkill", {
         get: function () {
-            return this.object.character.skills.leadership.name;
+            return this._src.leadershipSkill;
         },
         set: function (value) {
-            this.object.character.skills.leadership.name = value;
+            this._src.leadershipSkill = value;
+            this.leadershipSkillChange.emit(this._src.leadershipSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "marschSkill", {
         get: function () {
-            return this.object.character.skills.marsch.name;
+            return this._src.marschSkill;
         },
         set: function (value) {
-            this.object.character.skills.marsch.name = value;
+            this._src.marschSkill = value;
+            this.marschSkillChange.emit(this._src.marschSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "cookingSkill", {
         get: function () {
-            return this.object.character.skills.cooking.name;
+            return this._src.cookingSkill;
         },
         set: function (value) {
-            this.object.character.skills.cooking.name = value;
+            this._src.cookingSkill = value;
+            this.cookingSkillChange.emit(this._src.cookingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "occultismSkill", {
         get: function () {
-            return this.object.character.skills.occultism.name;
+            return this._src.occultismSkill;
         },
         set: function (value) {
-            this.object.character.skills.occultism.name = value;
+            this._src.occultismSkill = value;
+            this.occultismSkillChange.emit(this._src.occultismSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "rideSkill", {
         get: function () {
-            return this.object.character.skills.ride.name;
+            return this._src.rideSkill;
         },
         set: function (value) {
-            this.object.character.skills.ride.name = value;
+            this._src.rideSkill = value;
+            this.rideSkillChange.emit(this._src.rideSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "singSkill", {
         get: function () {
-            return this.object.character.skills.sing.name;
+            return this._src.singSkill;
         },
         set: function (value) {
-            this.object.character.skills.sing.name = value;
+            this._src.singSkill = value;
+            this.singSkillChange.emit(this._src.singSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "skiSkill", {
         get: function () {
-            return this.object.character.skills.ski.name;
+            return this._src.skiSkill;
         },
         set: function (value) {
-            this.object.character.skills.ski.name = value;
+            this._src.skiSkill = value;
+            this.skiSkillChange.emit(this._src.skiSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "actingSkill", {
         get: function () {
-            return this.object.character.skills.acting.name;
+            return this._src.actingSkill;
         },
         set: function (value) {
-            this.object.character.skills.acting.name = value;
+            this._src.actingSkill = value;
+            this.actingSkillChange.emit(this._src.actingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "brawlSkill", {
         get: function () {
-            return this.object.character.skills.brawl.name;
+            return this._src.brawlSkill;
         },
         set: function (value) {
-            this.object.character.skills.brawl.name = value;
+            this._src.brawlSkill = value;
+            this.brawlSkillChange.emit(this._src.brawlSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "sneakSkill", {
         get: function () {
-            return this.object.character.skills.sneak.name;
+            return this._src.sneakSkill;
         },
         set: function (value) {
-            this.object.character.skills.sneak.name = value;
+            this._src.sneakSkill = value;
+            this.sneakSkillChange.emit(this._src.sneakSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "scoutSkill", {
         get: function () {
-            return this.object.character.skills.scout.name;
+            return this._src.scoutSkill;
         },
         set: function (value) {
-            this.object.character.skills.scout.name = value;
+            this._src.scoutSkill = value;
+            this.scoutSkillChange.emit(this._src.scoutSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "gamblingSkill", {
         get: function () {
-            return this.object.character.skills.gambling.name;
+            return this._src.gamblingSkill;
         },
         set: function (value) {
-            this.object.character.skills.gambling.name = value;
+            this._src.gamblingSkill = value;
+            this.gamblingSkillChange.emit(this._src.gamblingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "trackingSkill", {
         get: function () {
-            return this.object.character.skills.tracking.name;
+            return this._src.trackingSkill;
         },
         set: function (value) {
-            this.object.character.skills.tracking.name = value;
+            this._src.trackingSkill = value;
+            this.trackingSkillChange.emit(this._src.trackingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "drinkingSkill", {
         get: function () {
-            return this.object.character.skills.drinking.name;
+            return this._src.drinkingSkill;
         },
         set: function (value) {
-            this.object.character.skills.drinking.name = value;
+            this._src.drinkingSkill = value;
+            this.drinkingSkillChange.emit(this._src.drinkingSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "searchSkill", {
         get: function () {
-            return this.object.character.skills.search.name;
+            return this._src.searchSkill;
         },
         set: function (value) {
-            this.object.character.skills.search.name = value;
+            this._src.searchSkill = value;
+            this.searchSkillChange.emit(this._src.searchSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "educateSkill", {
         get: function () {
-            return this.object.character.skills.educate.name;
+            return this._src.educateSkill;
         },
         set: function (value) {
-            this.object.character.skills.educate.name = value;
+            this._src.educateSkill = value;
+            this.educateSkillChange.emit(this._src.educateSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "avoidSkill", {
         get: function () {
-            return this.object.character.skills.avoid.name;
+            return this._src.avoidSkill;
         },
         set: function (value) {
-            this.object.character.skills.avoid.name = value;
+            this._src.avoidSkill = value;
+            this.avoidSkillChange.emit(this._src.avoidSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "appraiseSkill", {
         get: function () {
-            return this.object.character.skills.appraise.name;
+            return this._src.appraiseSkill;
         },
         set: function (value) {
-            this.object.character.skills.appraise.name = value;
+            this._src.appraiseSkill = value;
+            this.appraiseSkillChange.emit(this._src.appraiseSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "survivalSkill", {
         get: function () {
-            return this.object.character.skills.survival.name;
+            return this._src.survivalSkill;
         },
         set: function (value) {
-            this.object.character.skills.survival.name = value;
+            this._src.survivalSkill = value;
+            this.survivalSkillChange.emit(this._src.survivalSkill);
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(LocalizationDirective.prototype, "persuadeSkill", {
         get: function () {
-            return this.object.character.skills.persuade.name;
+            return this._src.persuadeSkill;
         },
         set: function (value) {
-            this.object.character.skills.persuade.name = value;
+            this._src.persuadeSkill = value;
+            this.persuadeSkillChange.emit(this._src.persuadeSkill);
         },
         enumerable: true,
         configurable: true
@@ -1528,267 +1752,475 @@ var LocalizationDirective = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
-    ], LocalizationDirective.prototype, "object", null);
+    ], LocalizationDirective.prototype, "source", null);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "strength", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "strengthChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "constitution", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "constitutionChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "dexterity", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "dexterityChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "charisma", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "charismaChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "intelligence", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "intelligenceChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "will", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "willChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "education", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "educationChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "sight", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "sightChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "hearing", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "hearingChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "eon4will", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "eon4willChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "combatExperience", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "combatExperienceChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "educationSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "educationSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "constitutionSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "constitutionSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "dexteritySkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "dexteritySkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "intelligenceSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "intelligenceSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "charismaIntelligenceSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "charismaIntelligenceSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "dexterityIntelligenceSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "dexterityIntelligenceSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "sightIntelligenceSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "sightIntelligenceSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "nativeLanguageSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "nativeLanguageSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "storyTellingSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "storyTellingSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "danceSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "danceSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "sleightOfHandSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "sleightOfHandSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "fishingSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "fishingSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "seductionSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "seductionSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "interogateSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "interogateSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "jestSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "jestSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "hideSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "hideSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "tradeSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "tradeSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "jumpSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "jumpSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "throwSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "throwSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "climbSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "climbSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "driveWagonSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "driveWagonSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "leadershipSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "leadershipSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "marschSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "marschSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "cookingSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "cookingSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "occultismSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "occultismSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "rideSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "rideSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "singSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "singSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "skiSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "skiSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "actingSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "actingSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "brawlSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "brawlSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "sneakSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "sneakSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "scoutSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "scoutSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "gamblingSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "gamblingSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "trackingSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "trackingSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "drinkingSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "drinkingSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "searchSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "searchSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "educateSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "educateSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "avoidSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "avoidSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "appraiseSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "appraiseSkillChange", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "survivalSkill", null);
     __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "survivalSkillChange", void 0);
+    __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object),
         __metadata("design:paramtypes", [Object])
     ], LocalizationDirective.prototype, "persuadeSkill", null);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", Object)
+    ], LocalizationDirective.prototype, "persuadeSkillChange", void 0);
     LocalizationDirective = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"])({
             selector: 'localization'
@@ -2435,7 +2867,7 @@ module.exports = ".flex-field\r\n{\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 
 /***/ "./src/app/input-group.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-input\">\r\n    <label *ngIf=\"!!label\">{{label}}</label>\r\n    <div class=\"input-group flex-field\">\r\n        <div *ngIf=\"!!prefix\" class=\"input-group-prepend\">\r\n            <span class=\"input-group-text\">{{prefix}}</span>\r\n        </div>\r\n        <input #field class=\"form-control\" [type]=\"type\" [(readonly)]=\"readonly\" (change)=\"value = field.value\" [value]=\"value\" step=\"any\"\r\n        />\r\n        <div *ngIf=\"!!suffix\" class=\"input-group-append\">\r\n            <span class=\"input-group-text\">{{suffix}}</span>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"form-input\">\r\n    <label *ngIf=\"!!label\">{{label}}</label>\r\n    <div class=\"input-group flex-field\" style=\"flex-wrap:nowrap\">\r\n        <div *ngIf=\"!!prefix\" class=\"input-group-prepend\">\r\n            <span class=\"input-group-text\">{{prefix}}</span>\r\n        </div>\r\n        <input #field class=\"form-control\" [type]=\"type\" [(readonly)]=\"readonly\" (change)=\"value = field.value\" [value]=\"value\" step=\"any\"\r\n        />\r\n        <div *ngIf=\"!!suffix\" class=\"input-group-append\">\r\n            <span class=\"input-group-text\">{{suffix}}</span>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -3335,7 +3767,6 @@ var CharacterObject = /** @class */ (function () {
     });
     Object.defineProperty(CharacterObject.prototype, "maxWellBeingArray", {
         get: function () {
-            console.log(CharacterObject._maxWellBeingArray);
             return CharacterObject._maxWellBeingArray;
         },
         enumerable: true,
@@ -3743,7 +4174,7 @@ var CoinsStorage = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__melee_weapon__ = __webpack_require__("./src/app/models/equipment/melee-weapon.ts");
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_3__melee_weapon__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ranged_weapon__ = __webpack_require__("./src/app/models/equipment/ranged-weapon.ts");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_4__ranged_weapon__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_4__ranged_weapon__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shield__ = __webpack_require__("./src/app/models/equipment/shield.ts");
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_5__shield__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__armor__ = __webpack_require__("./src/app/models/equipment/armor.ts");
@@ -3971,7 +4402,8 @@ var MeleeWeapon = /** @class */ (function (_super) {
 
 "use strict";
 /* unused harmony export RangedDamage */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RangedWeapon; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Quiver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return RangedWeapon; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__item__ = __webpack_require__("./src/app/models/equipment/item.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_serializr__ = __webpack_require__("./node_modules/serializr/lib/es/serializr.js");
 var __extends = (this && this.__extends) || (function () {
@@ -4021,11 +4453,31 @@ var RangedDamage = /** @class */ (function () {
     return RangedDamage;
 }());
 
+var Quiver = /** @class */ (function () {
+    function Quiver() {
+        this.shots = null;
+        this.size = null;
+        this.shots = 0;
+        this.size = 12;
+    }
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */],
+        __metadata("design:type", Number)
+    ], Quiver.prototype, "shots", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */],
+        __metadata("design:type", Number)
+    ], Quiver.prototype, "size", void 0);
+    return Quiver;
+}());
+
 var RangedWeapon = /** @class */ (function (_super) {
     __extends(RangedWeapon, _super);
     function RangedWeapon() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.range = null;
+        _this.quiverWeight = null;
+        _this.quivers = new Array();
         _this.damage = new RangedDamage();
         return _this;
     }
@@ -4033,6 +4485,14 @@ var RangedWeapon = /** @class */ (function (_super) {
         __WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */],
         __metadata("design:type", String)
     ], RangedWeapon.prototype, "range", void 0);
+    __decorate([
+        __WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */],
+        __metadata("design:type", Number)
+    ], RangedWeapon.prototype, "quiverWeight", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */])(Object(__WEBPACK_IMPORTED_MODULE_1_serializr__["c" /* list */])(Object(__WEBPACK_IMPORTED_MODULE_1_serializr__["d" /* object */])(Quiver))),
+        __metadata("design:type", Array)
+    ], RangedWeapon.prototype, "quivers", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1_serializr__["f" /* serializable */])(Object(__WEBPACK_IMPORTED_MODULE_1_serializr__["d" /* object */])(RangedDamage)),
         __metadata("design:type", RangedDamage)
@@ -4132,6 +4592,21 @@ var Wrapper = /** @class */ (function () {
         __metadata("design:type", Object)
     ], Wrapper.prototype, "value", void 0);
     return Wrapper;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/localization.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocalizationObject; });
+var LocalizationObject = /** @class */ (function () {
+    function LocalizationObject() {
+    }
+    return LocalizationObject;
 }());
 
 
@@ -4578,7 +5053,7 @@ var MeleeWeaponComponent = /** @class */ (function (_super) {
 /***/ "./src/app/page1/ranged-weapon.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<td>\r\n    <input-base [(value)]=\"item.name\" type=\"text\"></input-base>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"skill\" type=\"number\"></input-base>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"item.range\" type=\"text\"></input-base>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.short\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.normal\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.far\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.veryFar\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"item.weight\" type=\"number\"></input-base>\r\n</td>"
+module.exports = "<!--\r\n<div class=\"rTableRow\">\r\n    <div class=\"rTableCell\"><input-base [(value)]=\"item.name\" type=\"text\"></input-base></div>\r\n    <div class=\"rTableCell\"><input-base [(value)]=\"skill\" type=\"number\"></input-base></div>\r\n    <div class=\"rTableCell\"><input-base [(value)]=\"item.range\" type=\"text\"></input-base></div>\r\n    <div class=\"rTableCell\"><input-group prefix=\"Ob\" [(value)]=\"item.damage.short\" type=\"text\"></input-group></div>\r\n    <div class=\"rTableCell\"><input-group prefix=\"Ob\" [(value)]=\"item.damage.normal\" type=\"text\"></input-group></div>\r\n    <div class=\"rTableCell\"><input-group prefix=\"Ob\" [(value)]=\"item.damage.far\" type=\"text\"></input-group></div>\r\n    <div class=\"rTableCell\"><input-group prefix=\"Ob\" [(value)]=\"item.damage.veryFar\" type=\"text\"></input-group></div>\r\n    <div class=\"rTableCell\"><input-base [(value)]=\"item.weight\" type=\"number\"></input-base></div>\r\n</div>\r\n    <div class=\"rTableRow\" ng-if=\"item.quivers.length > 0\"> \r\n    <span i18n=\"@@shots\" style=\"margin-right: 10px\">Skott</span>\r\n    <div style=\"display:inline-block\">\r\n        <div *ngFor=\"let quiver of item.quivers\" style=\"display:inline-block;margin-right:20px\">\r\n            <span *ngFor=\"let q of quiver.size | arrayConstructor; let i = index\">\r\n                <input-box [checked]=\"i < quiver.shots\" type=\"circle\" fill=\"solid\" (click)=\"quiver.shots == i + 1 ? quiver.shots = quiver.shots - 1 : quiver.shots = i + 1\"></input-box>\r\n            </span>\r\n        </div>\r\n    </div>\r\n</div>\r\n-->\r\n<tr>\r\n<td>\r\n    <div>\r\n    <add-remove-menu class=\"hover-menu\" [(array)]=\"item.quivers\" min=\"0\" [default]=\"newQuiver\"></add-remove-menu>\r\n    <input-base [(value)]=\"item.name\" type=\"text\"></input-base>\r\n    </div>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"skill\" type=\"number\"></input-base>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"item.range\" type=\"text\"></input-base>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.short\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.normal\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.far\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-group prefix=\"Ob\" [(value)]=\"item.damage.veryFar\" type=\"text\"></input-group>\r\n</td>\r\n<td>\r\n    <input-base [(value)]=\"item.weight\" type=\"number\"></input-base>\r\n</td>\r\n</tr>\r\n<tr *ngIf=\"item.quivers.length > 0\">\r\n    <td>\r\n        <span i18n=\"@@shots\" style=\"margin-right: 10px\">Skott</span>\r\n    </td>\r\n    <td colspan=6>\r\n                <div *ngFor=\"let quiver of item.quivers\" style=\"display:inline-block;margin-right:20px\">\r\n                    <span *ngFor=\"let q of quiver.size | arrayConstructor; let i = index\" style=\"display: inline-block\">\r\n                        <input-box [checked]=\"i < quiver.shots\" type=\"circle\" fill=\"solid\" (click)=\"quiver.shots == i + 1 ? quiver.shots = quiver.shots - 1 : quiver.shots = i + 1\"></input-box>\r\n                    </span>\r\n                </div>\r\n    </td>\r\n    <td>\r\n        <input-base [(value)]=\"item.quiverWeight\" type=\"number\"></input-base>\r\n    </td>\r\n</tr>"
 
 /***/ }),
 
@@ -4588,7 +5063,8 @@ module.exports = "<td>\r\n    <input-base [(value)]=\"item.name\" type=\"text\">
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RangedWeaponComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__item_skill_component__ = __webpack_require__("./src/app/page1/item-skill.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_equipment_ranged_weapon__ = __webpack_require__("./src/app/models/equipment/ranged-weapon.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__item_skill_component__ = __webpack_require__("./src/app/page1/item-skill.component.ts");
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -4610,20 +5086,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var RangedWeaponComponent = /** @class */ (function (_super) {
     __extends(RangedWeaponComponent, _super);
     function RangedWeaponComponent(_el, _re) {
         return _super.call(this, _el, _re) || this;
     }
+    RangedWeaponComponent.prototype.newQuiver = function () {
+        return new __WEBPACK_IMPORTED_MODULE_1__models_equipment_ranged_weapon__["a" /* Quiver */]();
+    };
     RangedWeaponComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'tr[ranged-weapon]',
+            selector: 'tbody[ranged-weapon]',
             template: __webpack_require__("./src/app/page1/ranged-weapon.component.html")
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer"]])
     ], RangedWeaponComponent);
     return RangedWeaponComponent;
-}(__WEBPACK_IMPORTED_MODULE_1__item_skill_component__["a" /* ItemSkillComponent */]));
+}(__WEBPACK_IMPORTED_MODULE_2__item_skill_component__["a" /* ItemSkillComponent */]));
 
 
 
