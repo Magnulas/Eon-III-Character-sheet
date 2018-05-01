@@ -259,7 +259,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.importCharacterFromLocalStorage = function () {
         var jsonData = window.localStorage.getItem(AppComponent_1.LOCAL_STORAGE_PATH);
         if (jsonData) {
-            //this.character = CharacterObject.deserialize(jsonData);
+            this.character = __WEBPACK_IMPORTED_MODULE_1__models_character__["a" /* CharacterObject */].deserialize(jsonData);
         }
     };
     AppComponent.prototype.exportCharacterToLocalStorage = function () {
