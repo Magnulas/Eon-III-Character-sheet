@@ -1,0 +1,54 @@
+/*@font-face {
+    font-family: squarecaps;
+	src: url(../fonts/squarecaps/SquareCaps.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: jeffnichols;
+    src: url(../fonts/jeffnichols/JeffNichols.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: eileencaps-black;
+    src: url(../fonts/eileen-caps/EileenCaps-Black.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: eileencaps;
+    src: url(../fonts/eileen-caps/EileenCaps-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: chapbook-dingbats;
+    src: url(../fonts/chapbook/Chapbook-Dingbats.otf) format("opentype");
+}
+*/
+@font-face {
+    font-family: medievalsharp;
+    src: url(fonts/medievalsharp/MedievalSharp.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: chapbook-italic;
+    src: url(fonts/chapbook/Chapbook-Italic.otf) format("opentype");
+}
+
+@font-face {
+    font-family: chapbook;
+    src: url(fonts/chapbook/Chapbook-Regular.otf) format("opentype");
+}
+/*
+@font-face {
+    font-family: royal;
+    src: url(../fonts/royal/Royal.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: royal-2;
+    src: url(../fonts/royal/Royal2.ttf) format("truetype");
+}
+*/
+@font-face {
+    font-family: uncialantiqua;
+    src: url(fonts/uncialantiqua/UncialAntiqua-Regular.ttf) format("truetype");
+}
