@@ -13,8 +13,12 @@ label, th, h4 {
 input{
     height: 32px;
 }
-input, textarea, .my-form-control, .input-group-text{
+input, textarea, .my-form-control, .input-group-text, input-base > .text-overlay{
 	font-size: 20px;
+}
+input-base > .text-overlay > *{
+    vertical-align: sub;
+    height: 20px;
 }
 span, span.formula{
     font-size: 16px;
